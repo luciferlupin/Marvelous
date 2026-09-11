@@ -10,7 +10,12 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 
 ## Current Product Direction
 
+- Expansion: Ashok Vihar is open; Model Town opens 22 September; Pitampura and Punjabi Bagh are coming soon. Franchise opportunities are available. Do not invent opening dates, investment terms, or contact details. Franchise enquiry preparation must clearly state it is not submitted until a real endpoint is connected.
+
+- Choose photography by section subject: hair colour imagery for colour stories, bridal styling for occasions, and scalp treatment imagery for care. Keep warm ivory, bronze, and champagne surroundings cohesive with page backgrounds. Pair photography with original 2D artwork and purposeful scroll motion; do not imply editorial inspiration images are verified client results.
+
 - Extend the homepage with original, premium 2D editorial graphics, spacious Apple-like bento layouts, and sticky section-overlap scroll choreography while preserving the established warm ivory, champagne, and espresso luxury palette.
+- Treat the site as an expensive, high-luxury digital experience: continue adding substantive editorial sections, refined micro-interactions, reversible scroll-linked motion, layered 2D creative assets, and more complex but silky animation systems rather than static card grids.
 
 - Build only the Marvelous Salon splash-to-hero transition for now. Do not add navigation or the rest of the website until the user provides that direction.
 - Use the supplied Marvelous Salon lockup as the source of truth. Rebuild its letterforms as crisp real typography (including the custom crossbar-less chevron `Λ` for the second letter).
@@ -51,13 +56,7 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
     - Section background smoothly morphs from dark obsidian (`#120B08`) into warm limestone alabaster (`#F7F2EB`).
     - Eyebrow (`THE ATELIER PHILOSOPHY`), heading title, and decorative divider transition from champagne and ivory into rich original bronze tones.
     - The 3 craft cards transform from dark tinted glass into luminous alabaster porcelain cards (`rgba(255, 255, 255, 0.94)`) with sculpted bronze borders, champagne-to-bronze index numbers (`01`, `02`, `03`), and deep espresso body copy (`#3E2A1C`).
-  - **Curated Signature Rituals Section (`#services`)**:
-    - Section background transitions from `#170E0A` into warm travertine (`#F2ECE4`) with dynamic border harmonization.
-    - Eyebrow, section heading title, and divider transition synchronously.
-    - Service row cards shift from dark glass into luminous ivory porcelain (`rgba(255, 255, 255, 0.95)`) with sculpted dark bronze borders.
-    - Category badges (`SIGNATURE COLOR`, `TRICHOLOGY`, `CUT & SCULPT`) transition to deep bronze (`#765942`).
-    - Service titles shift from ivory to deep espresso bronze (`#2C1A0E`).
-    - Price tags and duration badges transition gracefully, and the "Reserve" button morphs into a dark espresso pill with luminous alabaster text.
+  - **Curated Signature Rituals Section**: Removed per user direction to streamline the luxury editorial flow directly into House Codes and Visionary Leadership.
   - **Private Booking Concierge Section (`#booking`)**:
     - Section background dynamically shifts into warm limestone alabaster (`#F5EFE7`).
     - Grand pavilion box transitions its radial gradient into luminous travertine marble with sculpted bronze borders.

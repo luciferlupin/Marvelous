@@ -1,4 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import EditorialStories from "./EditorialStories";
+import Expansion from "./Expansion";
 
 const BRAND_LETTERS = [
   { char: "M", delay: 0 },
@@ -15,6 +17,36 @@ const BRAND_LETTERS = [
 const HOLD_DURATION = 1400;
 const ZOOM_DURATION = 1350;
 
+const STUDIO_MODES = [
+  {
+    id: "form",
+    number: "01",
+    label: "Sculpt",
+    title: "Shape follows your movement.",
+    copy: "We map face architecture, natural fall and daily rhythm before a single line is cut.",
+    detail: "Dry contouring · movement map · growth plan",
+    asset: "/assets/marvelous-hair-flow-2d.png",
+  },
+  {
+    id: "tone",
+    number: "02",
+    label: "Illuminate",
+    title: "Light becomes your colour story.",
+    copy: "Undertone, depth and reflectivity are composed into a spectrum that belongs only to you.",
+    detail: "Tone mapping · dimensional placement · gloss architecture",
+    asset: "/assets/marvelous-color-prism-2d.png",
+  },
+  {
+    id: "restore",
+    number: "03",
+    label: "Restore",
+    title: "The healthiest finish begins at the root.",
+    copy: "Scalp intelligence and botanical treatment protocols rebuild strength beneath the visible result.",
+    detail: "Trichology scan · ritual prescription · home care edit",
+    asset: "/assets/marvelous-follicle-botanical-2d.png",
+  },
+];
+
 export function App() {
   const initialPhase =
     typeof window !== "undefined"
@@ -27,6 +59,7 @@ export function App() {
   );
   const [subVisible, setSubVisible] = useState(Boolean(initialPhase));
   const [taglineVisible, setTaglineVisible] = useState(Boolean(initialPhase));
+  const [activeStudioMode, setActiveStudioMode] = useState("form");
 
   const zoomTimer = useRef(null);
   const finishTimer = useRef(null);
@@ -65,11 +98,11 @@ export function App() {
     char: Array(9).fill(0),
     ticker: 0,
     method: 0,
+    studio: 0,
+    codes: 0,
     chapters: 0,
     atelier: 0,
     cards: [0, 0, 0],
-    services: 0,
-    rows: [0, 0, 0],
     leadership: 0,
     founders: [0, 0],
     booking: 0,
@@ -83,11 +116,11 @@ export function App() {
     char: Array(9).fill(0),
     ticker: 0,
     method: 0,
+    studio: 0,
+    codes: 0,
     chapters: 0,
     atelier: 0,
     cards: [0, 0, 0],
-    services: 0,
-    rows: [0, 0, 0],
     leadership: 0,
     founders: [0, 0],
     booking: 0,
@@ -149,6 +182,8 @@ export function App() {
 
     // Beauty Intelligence bento + sticky chapter story
     el.style.setProperty("--method-progress", c.method.toFixed(4));
+    el.style.setProperty("--studio-progress", c.studio.toFixed(4));
+    el.style.setProperty("--codes-progress", c.codes.toFixed(4));
     el.style.setProperty("--chapters-progress", c.chapters.toFixed(4));
 
     // Atelier section
@@ -165,22 +200,6 @@ export function App() {
       el.style.setProperty(`--card-title-${j}`, interpolateRgb(LIGHT_MAIN, DARK_MAIN, cp));
       el.style.setProperty(`--card-sub-${j}`, interpolateRgb(LIGHT_SUB, DARK_SUB, cp));
       el.style.setProperty(`--card-body-${j}`, interpolateRgb([250, 247, 242], [62, 42, 28], cp));
-    }
-
-    // Services section
-    el.style.setProperty("--services-progress", c.services.toFixed(4));
-    el.style.setProperty("--services-bg", interpolateRgb([23, 14, 10], [242, 236, 228], c.services));
-    el.style.setProperty("--services-title-color", interpolateRgb(LIGHT_MAIN, DARK_MAIN, c.services));
-    el.style.setProperty("--services-sub-color", interpolateRgb(LIGHT_SUB, DARK_SUB, c.services));
-    el.style.setProperty("--services-desc-color", interpolateRgb([250, 247, 242], [72, 49, 34], c.services));
-
-    // Services 3 rows individual color motion
-    for (let k = 0; k < 3; k++) {
-      const rp = c.rows[k];
-      el.style.setProperty(`--row-progress-${k}`, rp.toFixed(4));
-      el.style.setProperty(`--row-title-${k}`, interpolateRgb(LIGHT_MAIN, DARK_MAIN, rp));
-      el.style.setProperty(`--row-sub-${k}`, interpolateRgb(LIGHT_SUB, DARK_SUB, rp));
-      el.style.setProperty(`--row-desc-${k}`, interpolateRgb([250, 247, 242], [72, 49, 34], rp));
     }
 
     // Leadership & Founders section
@@ -242,17 +261,13 @@ export function App() {
 
     cur.ticker = lerpVal(cur.ticker, tgt.ticker, 0.09);
     cur.method = lerpVal(cur.method, tgt.method, 0.08);
+    cur.studio = lerpVal(cur.studio, tgt.studio, 0.08);
+    cur.codes = lerpVal(cur.codes, tgt.codes, 0.07);
     cur.chapters = lerpVal(cur.chapters, tgt.chapters, 0.075);
     cur.atelier = lerpVal(cur.atelier, tgt.atelier, 0.09);
 
     for (let j = 0; j < 3; j++) {
       cur.cards[j] = lerpVal(cur.cards[j], tgt.cards[j], 0.09);
-    }
-
-    cur.services = lerpVal(cur.services, tgt.services, 0.09);
-
-    for (let k = 0; k < 3; k++) {
-      cur.rows[k] = lerpVal(cur.rows[k], tgt.rows[k], 0.09);
     }
 
     cur.leadership = lerpVal(cur.leadership, tgt.leadership, 0.09);
@@ -335,6 +350,16 @@ export function App() {
       const methodEl = document.getElementById("method");
       tgt.method = calcProgress(methodEl, 0.96, 0.28);
 
+      const studioEl = document.getElementById("studio");
+      tgt.studio = calcProgress(studioEl, 0.94, 0.28);
+
+      const codesEl = document.getElementById("house-codes");
+      if (codesEl) {
+        const codesRect = codesEl.getBoundingClientRect();
+        const codesRange = Math.max(1, codesRect.height - wh);
+        tgt.codes = Math.min(1, Math.max(0, -codesRect.top / codesRange));
+      }
+
       const chaptersEl = document.getElementById("chapters");
       if (chaptersEl) {
         const chapterRect = chaptersEl.getBoundingClientRect();
@@ -351,18 +376,6 @@ export function App() {
       cardEls.forEach((card, idx) => {
         if (idx < 3) {
           tgt.cards[idx] = calcProgress(card, 0.92, 0.38);
-        }
-      });
-
-      // 4. Curated Signature Rituals
-      const servicesEl = document.getElementById("services");
-      tgt.services = calcProgress(servicesEl, 0.92, 0.35);
-
-      // 4b. 3 Service Rows individual progress
-      const rowEls = document.querySelectorAll(".service-row");
-      rowEls.forEach((row, idx) => {
-        if (idx < 3) {
-          tgt.rows[idx] = calcProgress(row, 0.92, 0.4);
         }
       });
 
@@ -422,18 +435,18 @@ export function App() {
       char: Array(9).fill(0),
       ticker: 0,
       method: 0,
+      studio: 0,
+      codes: 0,
       chapters: 0,
       atelier: 0,
       cards: [0, 0, 0],
-      services: 0,
-      rows: [0, 0, 0],
       leadership: 0,
       founders: [0, 0],
       booking: 0,
       footer: 0,
     };
-    targets.current = { ...resetValues, char: [...resetValues.char], cards: [...resetValues.cards], rows: [...resetValues.rows], founders: [...resetValues.founders] };
-    current.current = { ...resetValues, char: [...resetValues.char], cards: [...resetValues.cards], rows: [...resetValues.rows], founders: [...resetValues.founders] };
+    targets.current = { ...resetValues, char: [...resetValues.char], cards: [...resetValues.cards], founders: [...resetValues.founders] };
+    current.current = { ...resetValues, char: [...resetValues.char], cards: [...resetValues.cards], founders: [...resetValues.founders] };
     applyColors();
 
     setPhase("entering");
@@ -500,6 +513,8 @@ export function App() {
   }, [phase]);
 
   const isHeroRevealing = phase === "zooming" || phase === "complete";
+  const selectedStudioMode =
+    STUDIO_MODES.find((mode) => mode.id === activeStudioMode) || STUDIO_MODES[0];
 
   return (
     <>
@@ -520,17 +535,14 @@ export function App() {
           "--ticker-color": "rgb(250, 247, 242)",
           "--ticker-dot": "rgb(229, 206, 176)",
           "--method-progress": "0",
+          "--studio-progress": "0",
+          "--codes-progress": "0",
           "--chapters-progress": "0",
           "--atelier-progress": "0",
           "--atelier-bg": "rgb(18, 11, 8)",
           "--atelier-title-color": "rgb(250, 247, 242)",
           "--atelier-sub-color": "rgb(229, 206, 176)",
           "--atelier-body-color": "rgb(250, 247, 242)",
-          "--services-progress": "0",
-          "--services-bg": "rgb(23, 14, 10)",
-          "--services-title-color": "rgb(250, 247, 242)",
-          "--services-sub-color": "rgb(229, 206, 176)",
-          "--services-desc-color": "rgb(250, 247, 242)",
           "--leadership-progress": "0",
           "--leadership-bg": "rgb(20, 12, 8)",
           "--leadership-title-color": "rgb(250, 247, 242)",
@@ -592,14 +604,14 @@ export function App() {
             </a>
 
             <nav className="hero__nav-links" aria-label="Main Navigation">
-              <a href="#services" className="hero__nav-link">
-                Services
-              </a>
               <a href="#method" className="hero__nav-link">
                 Method
               </a>
               <a href="#atelier" className="hero__nav-link">
                 The Atelier
+              </a>
+              <a href="#house-codes" className="hero__nav-link">
+                Codes
               </a>
               <a href="#leadership" className="hero__nav-link">
                 Leadership
@@ -651,8 +663,8 @@ export function App() {
             <a href="#booking" className="hero__cta-primary">
               Reserve an Experience
             </a>
-            <a href="#services" className="hero__cta-secondary">
-              Explore Services
+            <a href="#atelier" className="hero__cta-secondary">
+              Explore The Atelier
               <span className="hero__cta-arrow" aria-hidden="true">→</span>
             </a>
           </div>
@@ -785,8 +797,83 @@ export function App() {
             <aside className="method-card method-card--statement">
               <span className="method-card__index">THE MARVELOUS METHOD</span>
               <p className="method-quote">Science sets the foundation. The hand makes it personal.</p>
-              <a href="#services" className="method-link">Explore signature rituals <span aria-hidden="true">→</span></a>
+              <a href="#studio" className="method-link">Enter the consultation studio <span aria-hidden="true">→</span></a>
             </aside>
+          </div>
+        </div>
+      </section>
+
+      {/* Interactive consultation studio — selection, hover and pointer micro-interactions */}
+      <section id="studio" className="studio-section" aria-labelledby="studio-title">
+        <div className="studio-shell">
+          <div className="studio-copy">
+            <span className="studio-eyebrow">THE INTERACTIVE CONSULTATION</span>
+            <h2 id="studio-title">Design your<br />Marvelous ritual.</h2>
+            <p className="studio-intro">
+              Explore the three lenses our artists use to build a result around you.
+              Select a discipline to reveal its creative blueprint.
+            </p>
+
+            <div className="studio-tabs" aria-label="Consultation disciplines">
+              {STUDIO_MODES.map((mode) => (
+                <button
+                  key={mode.id}
+                  type="button"
+                  className={`studio-tab ${activeStudioMode === mode.id ? "studio-tab--active" : ""}`}
+                  aria-pressed={activeStudioMode === mode.id}
+                  onClick={() => setActiveStudioMode(mode.id)}
+                  onFocus={() => setActiveStudioMode(mode.id)}
+                >
+                  <span>{mode.number}</span>
+                  <strong>{mode.label}</strong>
+                  <i aria-hidden="true">→</i>
+                </button>
+              ))}
+            </div>
+
+            <div className="studio-detail" aria-live="polite">
+              <span>{selectedStudioMode.number} · {selectedStudioMode.label}</span>
+              <h3>{selectedStudioMode.title}</h3>
+              <p>{selectedStudioMode.copy}</p>
+              <small>{selectedStudioMode.detail}</small>
+            </div>
+          </div>
+
+          <div
+            className="studio-visual"
+            onPointerMove={(event) => {
+              const bounds = event.currentTarget.getBoundingClientRect();
+              const x = ((event.clientX - bounds.left) / bounds.width - 0.5) * 2;
+              const y = ((event.clientY - bounds.top) / bounds.height - 0.5) * 2;
+              event.currentTarget.style.setProperty("--studio-x", x.toFixed(3));
+              event.currentTarget.style.setProperty("--studio-y", y.toFixed(3));
+            }}
+            onPointerLeave={(event) => {
+              event.currentTarget.style.setProperty("--studio-x", "0");
+              event.currentTarget.style.setProperty("--studio-y", "0");
+            }}
+          >
+            <div className="studio-visual__frame">
+              {STUDIO_MODES.map((mode) => (
+                <img
+                  key={mode.id}
+                  className={`studio-visual__image ${activeStudioMode === mode.id ? "studio-visual__image--active" : ""}`}
+                  src={mode.asset}
+                  alt={activeStudioMode === mode.id ? `${mode.label} consultation artwork` : ""}
+                  aria-hidden={activeStudioMode !== mode.id}
+                />
+              ))}
+              <div className="studio-visual__caption">
+                <span>MARVELOUS METHOD</span>
+                <strong>{selectedStudioMode.label}</strong>
+              </div>
+            </div>
+            <img
+              className="studio-visual__accent"
+              src="/assets/marvelous-tools-still-life-2d.png"
+              alt=""
+              aria-hidden="true"
+            />
           </div>
         </div>
       </section>
@@ -830,60 +917,60 @@ export function App() {
         </div>
       </section>
 
-      {/* Curated Services Rituals */}
-      <section id="services" className="services-section">
-        <div className="editorial-container">
-          <div className="editorial-header">
-            <span className="editorial-eyebrow">CURATED EXPERIENCES</span>
-            <h2 className="editorial-title">Signature Salon Rituals</h2>
-            <div className="editorial-divider" />
+      {/* House Codes — horizontal scroll gallery of the atelier's visual language */}
+      <section id="house-codes" className="codes-section" aria-labelledby="codes-title">
+        <div className="codes-sticky">
+          <header className="codes-header">
+            <div>
+              <span>THE HOUSE CODES · 01—04</span>
+              <h2 id="codes-title">Luxury lives in the details.</h2>
+            </div>
+            <p>Scroll to move through the visual language behind every Marvelous result.</p>
+          </header>
+
+          <div className="codes-viewport">
+            <div className="codes-track">
+              <article className="code-panel code-panel--lead">
+                <img src="/assets/marvelous-ribbon-profile-2d.png" alt="Editorial profile with flowing architectural hair ribbons" loading="lazy" />
+                <div className="code-panel__copy">
+                  <span>01 · MOVEMENT</span>
+                  <h3>Hair should never feel still.</h3>
+                  <p>Every line is designed for the way it catches air, light and attention.</p>
+                </div>
+              </article>
+
+              <article className="code-panel code-panel--tools">
+                <img src="/assets/marvelous-tools-still-life-2d.png" alt="Sculptural arrangement of premium salon tools" loading="lazy" />
+                <div className="code-panel__copy">
+                  <span>02 · PRECISION</span>
+                  <h3>The hand is the technology.</h3>
+                  <p>Modern technique, disciplined tools and an artist's eye do the quiet work.</p>
+                </div>
+              </article>
+
+              <article className="code-panel code-panel--tone">
+                <img src="/assets/marvelous-color-prism-2d.png" alt="Champagne and rose colour prism artwork" loading="lazy" />
+                <div className="code-panel__copy">
+                  <span>03 · DIMENSION</span>
+                  <h3>Colour behaves like light.</h3>
+                  <p>Placement creates depth; tone creates emotion; gloss makes it luminous.</p>
+                </div>
+              </article>
+
+              <article className="code-panel code-panel--final">
+                <img src="/assets/marvelous-hair-flow-2d.png" alt="Flowing espresso and champagne hair ribbons" loading="lazy" />
+                <div className="code-panel__copy">
+                  <span>04 · SIGNATURE</span>
+                  <h3>Recognisable. Never repeated.</h3>
+                  <p>The finish feels unmistakably Marvelous—and completely your own.</p>
+                  <a href="#booking">Begin your consultation <span aria-hidden="true">→</span></a>
+                </div>
+              </article>
+            </div>
           </div>
 
-          <div className="services-list">
-            <article className="service-row">
-              <div className="service-row__info">
-                <span className="service-row__category">SIGNATURE COLOR</span>
-                <h3 className="service-row__title">French Couture Balayage & Glaze</h3>
-                <p className="service-row__desc">
-                  Multi-dimensional bespoke placement, root melt, tone harmonization, and cold-pressed botanical seal.
-                </p>
-              </div>
-              <div className="service-row__meta">
-                <span className="service-row__time">150 MIN</span>
-                <span className="service-row__price">FROM $380</span>
-                <a href="#booking" className="service-row__btn">Reserve</a>
-              </div>
-            </article>
-
-            <article className="service-row">
-              <div className="service-row__info">
-                <span className="service-row__category">TRICHOLOGY</span>
-                <h3 className="service-row__title">Caviar & Keratin Restorative Ritual</h3>
-                <p className="service-row__desc">
-                  Ultrasonic scalp exfoliation, bio-lipid infusion, ozone steam therapy, and deep cellular hydration mask.
-                </p>
-              </div>
-              <div className="service-row__meta">
-                <span className="service-row__time">90 MIN</span>
-                <span className="service-row__price">FROM $260</span>
-                <a href="#booking" className="service-row__btn">Reserve</a>
-              </div>
-            </article>
-
-            <article className="service-row">
-              <div className="service-row__info">
-                <span className="service-row__category">CUT & SCULPT</span>
-                <h3 className="service-row__title">Architectural Cut & Atelier Blowout</h3>
-                <p className="service-row__desc">
-                  Bespoke dry contouring, customized face-framing geometry, tension blowout, and silk finishing gloss.
-                </p>
-              </div>
-              <div className="service-row__meta">
-                <span className="service-row__time">75 MIN</span>
-                <span className="service-row__price">FROM $190</span>
-                <a href="#booking" className="service-row__btn">Reserve</a>
-              </div>
-            </article>
+          <div className="codes-progress" aria-hidden="true">
+            <span />
           </div>
         </div>
       </section>
@@ -1030,6 +1117,9 @@ export function App() {
           </div>
         </div>
       </section>
+
+      <EditorialStories />
+      <Expansion />
 
       {/* Reservation & Atelier Concierge */}
       <section id="booking" className="booking-section">

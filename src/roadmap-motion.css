@@ -1,0 +1,18 @@
+.roadmap-scroll{height:260vh;background:#241c17;position:relative;--road-p:0}
+.roadmap-scroll .expansion{position:sticky;top:0;height:100vh;box-sizing:border-box;padding:100px 6vw 28px;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
+.roadmap-scroll .expansion h2{font-size:clamp(36px,4.3vw,66px);margin:16px 0;transform:translate3d(0,calc(var(--road-p)*-12px),0)}
+.roadmap-scroll .exp-intro{margin:0;font-size:12px}
+.roadmap-scroll .exp-rail{margin-top:40px}
+.roadmap-scroll .exp-rail:after{content:'';position:absolute;left:0;top:46px;height:1px;width:100%;background:#e7c598;transform:scaleX(var(--road-p));transform-origin:left;box-shadow:0 0 12px #cba77a66}
+.roadmap-scroll .exp-rail button{z-index:1;transform:translate3d(0,calc((1 - var(--stop-p,1))*26px),0);opacity:calc(.45 + var(--stop-p,1)*.55)}
+.roadmap-scroll .exp-rail button:focus-visible{opacity:1;transform:none}
+.roadmap-scroll .exp-detail{padding:20px 0;min-height:170px}
+.roadmap-scroll .exp-detail h3{font-size:40px;margin:8px 0}
+.roadmap-scroll .exp-detail p{font-size:12px;margin:8px 0}
+.roadmap-scroll .exp-stamp{font-size:clamp(36px,4vw,60px);padding:15px 4vw}
+.roadmap-scroll .exp-footer{padding-top:17px}
+.roadmap-meter{display:flex;align-items:center;gap:25px;margin-top:25px;font-size:7px;letter-spacing:.2em;color:#c9ae8f}
+.roadmap-meter i{position:relative;height:1px;background:#d2ae7933;flex:1}
+.roadmap-meter i:after{content:'';position:absolute;left:calc(var(--road-p)*100%);top:-3px;width:7px;height:7px;background:#e7c598;border-radius:50%;box-shadow:0 0 14px #e7c59877}
+@media(max-width:700px),(max-height:700px){.roadmap-scroll{height:auto}.roadmap-scroll .expansion{height:auto;position:relative;overflow:visible;padding:90px 22px 40px}.roadmap-scroll .exp-rail:after{display:none}.roadmap-scroll .exp-detail{min-height:0}.roadmap-scroll .expansion h2{font-size:40px}.roadmap-scroll .exp-rail button{opacity:1;transform:none}.roadmap-scroll .exp-stamp{padding:10px 0}}
+@media(prefers-reduced-motion:reduce){.roadmap-scroll{height:auto}.roadmap-scroll .expansion{height:auto;position:relative}.roadmap-scroll *{animation:none!important;transform:none!important;transition:none!important}.roadmap-scroll .exp-rail button{opacity:1}.roadmap-meter{display:none}}

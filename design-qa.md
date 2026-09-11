@@ -58,6 +58,87 @@ final result: passed
 
 ---
 
+# Luxury Motion Expansion — Studio, House Codes, and Founder Story QA
+
+## Evidence
+
+- Source visual truth: `/Users/harshitgoyal/marvelous/public/assets/marvelous-ribbon-profile-2d.png`, `/Users/harshitgoyal/marvelous/public/assets/marvelous-tools-still-life-2d.png`, `/Users/harshitgoyal/marvelous/public/assets/marvelous-color-prism-2d.png`, `/Users/harshitgoyal/marvelous/public/assets/marvelous-hair-flow-2d.png`, and `/Users/harshitgoyal/marvelous/design-source-founders-before.jpg`.
+- Rendered implementation: `/Users/harshitgoyal/marvelous/design-qa-studio.png`, `/Users/harshitgoyal/marvelous/design-qa-codes-mid.png`, `/Users/harshitgoyal/marvelous/design-qa-codes-end.png`, and `/Users/harshitgoyal/marvelous/design-qa-founders-top.png`.
+- Combined comparison inputs: `/Users/harshitgoyal/marvelous/design-qa-comparison-new-sections.jpg` and `/Users/harshitgoyal/marvelous/design-qa-comparison-founders.jpg`.
+- Browser and viewport: Codex in-app browser, 1027 × 781 CSS px, device density 1.
+- Implementation screenshots: 1027 × 781 px. New-section comparison board: 2078 × 1562 px. Founder comparison board: 2078 × 781 px.
+- Source assets: 1586 × 992, 1254 × 1254, 1586 × 992, and 1122 × 1402 px. Founder source capture: 1295 × 781 px.
+- Normalization: source assets were aspect-filled without stretching into a fixed mosaic; implementation captures were preserved at their native browser dimensions. Founder before/after panels were aspect-filled to equal 1027 × 781 frames.
+- States: Illuminate selected in the consultation studio; House Codes at approximately 38% and 76% scroll progress; founder section at its entrance and first-card reveal.
+
+## Full-view comparison evidence
+
+- The generated source language—hair ribbons, museum-like tool still life, prism light, travertine, champagne, espresso, and muted rose—is preserved consistently in the rendered Studio and House Codes sections.
+- The Studio balances a dark editorial control column against a luminous artwork stage, while House Codes translates the same art system into a light, horizontally progressing gallery.
+- The founder redesign replaces the earlier generic centered-card treatment with a more distinctive asymmetric editorial composition while retaining both real founder photographs and factual identity content.
+- The pinned navigation, section transitions, visual density, and typography remain coherent with the established homepage.
+
+## Focused region comparison evidence
+
+- Hair strands, metallic tool edges, paper texture, and prism highlights remain crisp at the tested viewport; no blur, stretching, masking halo, or obvious compression damage was visible.
+- The Studio's selected row, live detail copy, image crossfade, and caption all synchronize to the same active mode. Pointer movement adds restrained depth without changing selection.
+- House Codes advanced from the Movement/Precision pairing to the Dimension/Signature pairing under vertical scroll. The document width remained exactly 1027 px, confirming no unintended horizontal page overflow.
+- Founder card photography remains sharp with an intentional crop; the new heading and supporting copy establish hierarchy before the portrait enters.
+
+## Required fidelity surfaces
+
+- Fonts and typography: the existing Montserrat system is retained. Oversized light display copy, compact tracked labels, and readable body copy maintain appropriate optical contrast across dark and light sections.
+- Spacing and layout rhythm: Studio uses a stable two-column split; House Codes uses large editorial panels and generous gutters; Founder spacing intentionally shifts from a conventional grid to a magazine-like vertical narrative.
+- Colors and visual tokens: the warm ivory, champagne, blush, espresso, and bronze palette maps cleanly between the generated assets and implementation surfaces.
+- Image quality and asset fidelity: every visible editorial graphic is a real raster asset generated for its measured slot. No placeholder, CSS drawing, inline SVG illustration, or emoji substitute is used.
+- Copy and content: all new copy is concise, salon-specific, and aligned to consultation, technique, movement, colour, and individual signature. The final House Codes CTA links to booking.
+- States and accessibility: Studio uses real buttons with selected state, focus-visible treatment, keyboard focus behavior, and a polite live detail region. Images use useful alt text or are correctly hidden when decorative/inactive. Reduced-motion fallbacks disable spatial motion and crossfades.
+
+## Findings
+
+- No actionable P0, P1, or P2 findings remain.
+- [P3] The selected in-app browser offered only a fixed desktop viewport, so a fresh small-screen screenshot could not be captured in this pass. The implemented mobile CSS converts the Studio to a single column and House Codes to a non-sticky vertical stack.
+
+## Comparison History
+
+### Pass 1 — blocked
+
+- [P2] Studio selection could change unintentionally when the pointer crossed another mode during visual review.
+- Fix: removed pointer-enter selection and retained deliberate click and keyboard-focus activation; visual hover feedback remains in CSS.
+- Post-fix evidence: `/Users/harshitgoyal/marvelous/design-qa-studio.png` shows Illuminate remaining selected with its matching copy and artwork.
+
+### Pass 2 — passed
+
+- Combined comparisons show source artwork, rendered crops, typography, palette, content, and interaction states aligned with the intended luxury editorial direction.
+- House Codes scroll progression and page-width stability were verified at two positions; browser console returned no errors or warnings.
+- No remaining P0/P1/P2 fixes were required.
+
+## Browser Verification
+
+- Tested Studio click selection for Illuminate and verified matching text, artwork, and pressed state.
+- Tested House Codes vertical-to-horizontal scroll progression at multiple positions.
+- Checked document width against viewport width: 1027 px equals 1027 px.
+- Checked browser console: no warnings or errors.
+- Verified founder-section deep link and first portrait reveal.
+- Production build passed and all four Sites packaging tests passed.
+
+## Implementation Checklist
+
+- [x] Interactive consultation selector and synchronized imagery.
+- [x] Pointer-depth microinteraction without accidental state switching.
+- [x] Long-form horizontal editorial scroll gallery.
+- [x] Responsive vertical fallback and reduced-motion behavior.
+- [x] Asymmetric founder editorial redesign with real photography.
+- [x] Console, overflow, build, and Sites package verification.
+
+## Follow-up Polish
+
+- [P3] Add a 390 px browser evidence capture when the selected in-app browser exposes a resizable viewport.
+
+final result: passed
+
+---
+
 # Homepage Expansion — Bento and Scroll-Overlap QA
 
 ## Evidence
