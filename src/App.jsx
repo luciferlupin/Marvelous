@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import EditorialStories from "./EditorialStories";
 import Expansion from "./Expansion";
+import BrandLegacy from "./BrandLegacy";
 
 const BRAND_LETTERS = [
   { char: "M", delay: 0 },
@@ -1032,7 +1033,7 @@ export function App() {
               <h2 className="editorial-title">Two disciplines.<br />One remarkable standard.</h2>
             </div>
             <div className="leadership-header__note">
-              <span className="leadership-header__edition">EST. 2026 · INDIA</span>
+              <span className="leadership-header__edition">ASHOK VIHAR · NEW DELHI</span>
               <p className="leadership-header-desc">
                 Enterprise vision and award-winning artistry meet in one shared pursuit:
                 making every Marvelous experience impossible to forget.
@@ -1120,6 +1121,18 @@ export function App() {
 
       <EditorialStories />
       <Expansion />
+      <BrandLegacy />
+      <section id="ashok-vihar" className="local-research-section" style={{padding:"90px 6vw",background:"#f3ede7",color:"#35261c"}}>
+        <span style={{fontSize:10,letterSpacing:".18em"}}>ASHOK VIHAR / NEW DELHI</span>
+        <h2 style={{fontSize:"clamp(36px,5vw,68px)",fontWeight:300,letterSpacing:"-.05em"}}>Your neighbourhood.<br/>A world of beauty.</h2>
+        <p style={{maxWidth:640,lineHeight:1.9}}>Haircuts, colour, styling and hair spa. Bridal, party and groom makeup. Nail care, facials and grooming for women and men—bring your plans, and discuss a personalised service with the salon.</p>
+        <h3 style={{fontSize:30,fontWeight:300,marginTop:45}}>Marvelous Salon Academy</h3>
+        <p style={{maxWidth:640,lineHeight:1.9}}>Explore training in hair, makeup, skin and nail artistry. Contact the academy for current courses, practical learning, fees and the next intake.</p>
+        <div style={{display:"flex",flexWrap:"wrap",gap:28,marginTop:30,fontSize:12}}>
+          <a href="https://www.google.com/maps/search/?api=1&query=Marvelous+Salon+Ashok+Vihar+Delhi" target="_blank" rel="noreferrer" style={{color:"inherit"}}>Find the salon on Google Maps ↗</a>
+          <a href="https://www.justdial.com/Delhi/Marvelous-Beauty-Hair-Make-Up-Studio-Above-Bengali-Sweets-Deep-Market-Ashok-Vihar/011PXX11-XX11-130429104034-Y8Y6_BZDET/photos" target="_blank" rel="noreferrer" style={{color:"inherit"}}>Browse the public salon photo gallery ↗</a>
+        </div>
+      </section>
 
       {/* Reservation & Atelier Concierge */}
       <section id="booking" className="booking-section">
@@ -1131,8 +1144,8 @@ export function App() {
               Experience personalized couture consultations in our private atelier suites.
             </p>
             <div className="booking-actions">
-              <a href="tel:+12125550198" className="hero__cta-primary booking__cta-primary">
-                Call Concierge: (212) 555-0198
+              <a href="https://www.google.com/maps/search/?api=1&query=Marvelous+Salon+Ashok+Vihar+Delhi" target="_blank" rel="noreferrer" className="hero__cta-primary booking__cta-primary">
+                Find & Contact the Salon
               </a>
               <button
                 type="button"
@@ -1143,7 +1156,7 @@ export function App() {
               </button>
             </div>
             <p className="booking-address">
-              140 Haute Avenue, Atelier District · Tuesday through Saturday, 9:00 — 19:00
+              Ashok Vihar, New Delhi · Confirm the branch address and current hours before your visit.
             </p>
           </div>
         </div>

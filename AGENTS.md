@@ -10,6 +10,8 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 
 ## Current Product Direction
 
+- Brand story figures supplied by the user: 30+ years in business, over 50,000 clients served, two outlets, Marvelous Salon Academy, and an upcoming franchise model. Present these as a scroll-driven typographic story; preserve announced individual opening dates in the roadmap.
+
 - Expansion: Ashok Vihar is open; Model Town opens 22 September; Pitampura and Punjabi Bagh are coming soon. Franchise opportunities are available. Do not invent opening dates, investment terms, or contact details. Franchise enquiry preparation must clearly state it is not submitted until a real endpoint is connected.
 
 - Choose photography by section subject: hair colour imagery for colour stories, bridal styling for occasions, and scalp treatment imagery for care. Keep warm ivory, bronze, and champagne surroundings cohesive with page backgrounds. Pair photography with original 2D artwork and purposeful scroll motion; do not imply editorial inspiration images are verified client results.
