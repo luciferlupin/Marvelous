@@ -2,10 +2,14 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import EditorialStories from "./EditorialStories";
 import Expansion from "./Expansion";
 import BrandLegacy from "./BrandLegacy";
+import BrandPartners from "./BrandPartners";
+import FranchiseSection from "./FranchiseSection";
+import ArtGallery from "./ArtGallery";
+import MarvelousEmblem from "./MarvelousEmblem";
 
 const BRAND_LETTERS = [
   { char: "M", delay: 0 },
-  { char: "Λ", delay: 40, isLambda: true },
+  { char: "A", delay: 40 },
   { char: "R", delay: 80 },
   { char: "V", delay: 120 },
   { char: "E", delay: 160 },
@@ -174,6 +178,8 @@ export function App() {
     el.style.setProperty("--hero-desc-color", interpolateRgb([255, 255, 255], [62, 42, 28], c.hero));
     el.style.setProperty("--hero-footer-color", interpolateRgb(LIGHT_MAIN, DARK_MAIN, c.hero));
     el.style.setProperty("--hero-footer-sub", interpolateRgb(LIGHT_SUB, DARK_SUB, c.hero));
+    el.style.setProperty("--replay-bg", interpolateRgb([18, 11, 7], [245, 241, 238], c.hero));
+    el.style.setProperty("--replay-border", interpolateRgb([245, 230, 210], [118, 89, 66], c.hero));
 
     // Ticker
     el.style.setProperty("--ticker-progress", c.ticker.toFixed(4));
@@ -198,6 +204,8 @@ export function App() {
     for (let j = 0; j < 3; j++) {
       const cp = c.cards[j];
       el.style.setProperty(`--card-progress-${j}`, cp.toFixed(4));
+      el.style.setProperty(`--card-bg-${j}`, interpolateRgb([26, 17, 12], [255, 255, 255], cp));
+      el.style.setProperty(`--card-border-${j}`, interpolateRgb([229, 206, 176], [118, 89, 66], cp));
       el.style.setProperty(`--card-title-${j}`, interpolateRgb(LIGHT_MAIN, DARK_MAIN, cp));
       el.style.setProperty(`--card-sub-${j}`, interpolateRgb(LIGHT_SUB, DARK_SUB, cp));
       el.style.setProperty(`--card-body-${j}`, interpolateRgb([250, 247, 242], [62, 42, 28], cp));
@@ -214,6 +222,10 @@ export function App() {
     for (let f = 0; f < 2; f++) {
       const fp = c.founders[f];
       el.style.setProperty(`--founder-card-p-${f}`, fp.toFixed(4));
+      el.style.setProperty(`--founder-card-bg-${f}`, interpolateRgb([24, 15, 10], [255, 255, 255], fp));
+      el.style.setProperty(`--founder-card-border-${f}`, interpolateRgb([229, 206, 176], [118, 89, 66], fp));
+      el.style.setProperty(`--founder-tag-bg-${f}`, interpolateRgb([35, 22, 14], [236, 228, 218], fp));
+      el.style.setProperty(`--founder-tag-border-${f}`, interpolateRgb([229, 206, 176], [118, 89, 66], fp));
       el.style.setProperty(`--founder-title-${f}`, interpolateRgb(LIGHT_MAIN, DARK_MAIN, fp));
       el.style.setProperty(`--founder-role-${f}`, interpolateRgb(LIGHT_SUB, DARK_SUB, fp));
       el.style.setProperty(`--founder-desc-${f}`, interpolateRgb([250, 247, 242], [62, 42, 28], fp));
@@ -222,6 +234,8 @@ export function App() {
     // Booking section
     el.style.setProperty("--booking-progress", c.booking.toFixed(4));
     el.style.setProperty("--booking-bg", interpolateRgb([18, 11, 8], [245, 239, 231], c.booking));
+    el.style.setProperty("--booking-box-bg", interpolateRgb([24, 16, 11], [250, 245, 238], c.booking));
+    el.style.setProperty("--booking-box-border", interpolateRgb([229, 206, 176], [118, 89, 66], c.booking));
     el.style.setProperty("--booking-title-color", interpolateRgb(LIGHT_MAIN, DARK_MAIN, c.booking));
     el.style.setProperty("--booking-sub-color", interpolateRgb(LIGHT_SUB, DARK_SUB, c.booking));
     el.style.setProperty("--booking-desc-color", interpolateRgb([250, 247, 242], [82, 58, 40], c.booking));
@@ -244,16 +258,16 @@ export function App() {
     const tgt = targets.current;
     const cur = current.current;
 
-    const lerpVal = (cVal, tVal, factor = 0.09) => {
+    const lerpVal = (cVal, tVal, factor = 0.09, eps = 0.0004) => {
       const diff = tVal - cVal;
-      if (Math.abs(diff) > 0.0004) {
+      if (Math.abs(diff) > eps) {
         stillMoving = true;
         return cVal + diff * factor;
       }
       return tVal;
     };
 
-    cur.scrollY = lerpVal(cur.scrollY, tgt.scrollY, 0.12);
+    cur.scrollY = lerpVal(cur.scrollY, tgt.scrollY, 0.14, 0.2);
     cur.hero = lerpVal(cur.hero, tgt.hero, 0.09);
 
     for (let i = 0; i < 9; i++) {
@@ -301,13 +315,14 @@ export function App() {
       document.body.style.overflow = "hidden";
       return undefined;
     }
-    document.body.style.overflow = "auto";
+    document.body.style.overflow = "";
+    document.body.style.overflowX = "hidden";
 
     // Immediate initial color application
     applyColors();
 
     const handleScroll = () => {
-      const sy = window.scrollY;
+      const sy = Math.max(0, window.scrollY);
       const wh = window.innerHeight;
 
       const past40 = sy > 40;
@@ -598,10 +613,14 @@ export function App() {
           } ${isScrolled ? "hero__header--scrolled" : ""}`}
         >
           <div className="hero__nav-inner">
-            <a href="#" className="hero__logo-mark" aria-label="Marvelous Salon Home">
-              <span className="hero__logo-monogram">M</span>
-              <span className="hero__logo-divider" aria-hidden="true" />
-              <span className="hero__logo-sub">ATELIER</span>
+            <a href="#" className="hero__logo-mark" aria-label="Marvelous Salon & Academy">
+              <span className="hero__logo-monogram-wrap">
+                <MarvelousEmblem className="hero__header-emblem-svg" />
+              </span>
+              <div className="hero__header-text-group">
+                <span className="hero__logo-title">MARVELOUS</span>
+                <span className="hero__logo-sub">SALON & ACADEMY</span>
+              </div>
             </a>
 
             <nav className="hero__nav-links" aria-label="Main Navigation">
@@ -611,11 +630,17 @@ export function App() {
               <a href="#atelier" className="hero__nav-link">
                 The Atelier
               </a>
-              <a href="#house-codes" className="hero__nav-link">
-                Codes
+              <a href="#partners" className="hero__nav-link">
+                Partners
+              </a>
+              <a href="#franchise" className="hero__nav-link">
+                Franchise
               </a>
               <a href="#leadership" className="hero__nav-link">
                 Leadership
+              </a>
+              <a href="#gallery" className="hero__nav-link">
+                Art Gallery
               </a>
               <a href="#booking" className="hero__nav-link">
                 Concierge
@@ -628,6 +653,15 @@ export function App() {
               </a>
             </div>
           </div>
+          <nav className="hero__mobile-nav-bar" aria-label="Mobile Navigation">
+            <a href="#method" className="hero__mobile-nav-link">Method</a>
+            <a href="#atelier" className="hero__mobile-nav-link">Atelier</a>
+            <a href="#partners" className="hero__mobile-nav-link">Partners</a>
+            <a href="#franchise" className="hero__mobile-nav-link">Franchise</a>
+            <a href="#leadership" className="hero__mobile-nav-link">Leadership</a>
+            <a href="#gallery" className="hero__mobile-nav-link">Gallery</a>
+            <a href="#booking" className="hero__mobile-nav-link">Concierge</a>
+          </nav>
         </header>
 
         {/* Hero Main Content with Dynamic Motion Scroll Transition */}
@@ -637,20 +671,25 @@ export function App() {
           }`}
         >
           <div className="brand-lockup hero__lockup" aria-hidden="true">
-            <h1 className="brand-word">
-              <span className="brand-char">M</span>
-              <span className="brand-char brand-char--lambda">Λ</span>
-              <span className="brand-char">R</span>
-              <span className="brand-char">V</span>
-              <span className="brand-char">E</span>
-              <span className="brand-char">L</span>
-              <span className="brand-char">O</span>
-              <span className="brand-char">U</span>
-              <span className="brand-char">S</span>
-            </h1>
+            <div className="brand-title-row">
+              <div className="brand-emblem-wrap">
+                <MarvelousEmblem className="brand-emblem-svg" />
+              </div>
+              <h1 className="brand-word">
+                <span className="brand-char">M</span>
+                <span className="brand-char">A</span>
+                <span className="brand-char">R</span>
+                <span className="brand-char">V</span>
+                <span className="brand-char">E</span>
+                <span className="brand-char">L</span>
+                <span className="brand-char">O</span>
+                <span className="brand-char">U</span>
+                <span className="brand-char">S</span>
+              </h1>
+            </div>
             <div className="brand-salon-row">
               <span className="brand-rule" />
-              <span className="brand-salon">SALON</span>
+              <span className="brand-salon">SALON & ACADEMY</span>
               <span className="brand-rule" />
             </div>
             <p className="brand-tagline">BEAUTY BEYOND ORDINARY</p>
@@ -730,7 +769,7 @@ export function App() {
           <span className="motion-ticker__dot">✦</span>
           <span>PRIVATE ATELIER SUITES</span>
           <span className="motion-ticker__dot">✦</span>
-          <span>MΛRVELOUS SALON</span>
+          <span>MARVELOUS SALON & ACADEMY</span>
           <span className="motion-ticker__dot">✦</span>
           <span>HAUTE COIFFURE</span>
           <span className="motion-ticker__dot">✦</span>
@@ -742,7 +781,7 @@ export function App() {
           <span className="motion-ticker__dot">✦</span>
           <span>PRIVATE ATELIER SUITES</span>
           <span className="motion-ticker__dot">✦</span>
-          <span>MΛRVELOUS SALON</span>
+          <span>MARVELOUS SALON & ACADEMY</span>
           <span className="motion-ticker__dot">✦</span>
         </div>
       </div>
@@ -849,7 +888,28 @@ export function App() {
               event.currentTarget.style.setProperty("--studio-x", x.toFixed(3));
               event.currentTarget.style.setProperty("--studio-y", y.toFixed(3));
             }}
+            onTouchMove={(event) => {
+              if (!event.touches || !event.touches[0]) return;
+              const touch = event.touches[0];
+              const bounds = event.currentTarget.getBoundingClientRect();
+              const x = Math.max(-1, Math.min(1, ((touch.clientX - bounds.left) / bounds.width - 0.5) * 2));
+              const y = Math.max(-1, Math.min(1, ((touch.clientY - bounds.top) / bounds.height - 0.5) * 2));
+              event.currentTarget.style.setProperty("--studio-x", x.toFixed(3));
+              event.currentTarget.style.setProperty("--studio-y", y.toFixed(3));
+            }}
             onPointerLeave={(event) => {
+              event.currentTarget.style.setProperty("--studio-x", "0");
+              event.currentTarget.style.setProperty("--studio-y", "0");
+            }}
+            onPointerUp={(event) => {
+              event.currentTarget.style.setProperty("--studio-x", "0");
+              event.currentTarget.style.setProperty("--studio-y", "0");
+            }}
+            onTouchEnd={(event) => {
+              event.currentTarget.style.setProperty("--studio-x", "0");
+              event.currentTarget.style.setProperty("--studio-y", "0");
+            }}
+            onTouchCancel={(event) => {
               event.currentTarget.style.setProperty("--studio-x", "0");
               event.currentTarget.style.setProperty("--studio-y", "0");
             }}
@@ -1048,31 +1108,31 @@ export function App() {
           </div>
 
           <div className="founder-grid">
-            {/* Founder 1: Hridhan Pahwa */}
+            {/* Co-Founder 1: Hridhan Pahwa */}
             <article id="founder-hridhan" className="founder-card">
               <span className="founder-card__edition" aria-hidden="true">01 · THE ARCHITECT</span>
               <div className="founder-card__media">
                 <img
                   src="/assets/hridhan-pahwa.jpg"
-                  alt="Hridhan Pahwa, Founder of Marvelous Salon and Academy, Lawyer & Legal Counsel"
+                  alt="Hridhan Pahwa, Co-Founder of Marvelous Salon and Academy, Lawyer & Legal Counsel"
                   className="founder-card__img founder-card__img--hridhan"
                   loading="lazy"
                 />
                 <div className="founder-card__media-badge">
-                  <span>FOUNDER & ADVOCATE</span>
+                  <span>CO-FOUNDER & ADVOCATE</span>
                 </div>
               </div>
               <div className="founder-card__content">
                 <p className="founder-card__statement">“Structure creates the freedom to build beautifully.”</p>
                 <div className="founder-card__header">
-                  <span className="founder-card__label">FOUNDER & LEGAL COUNSEL</span>
+                  <span className="founder-card__label">CO-FOUNDER & LEGAL COUNSEL</span>
                   <h3 className="founder-card__name">Hridhan Pahwa</h3>
                   <p className="founder-card__role">
-                    Founder, Marvelous Salon & Academy · Advocate & Legal Counsel
+                    Co-Founder, Marvelous Salon & Academy · Advocate & Legal Counsel
                   </p>
                 </div>
                 <p className="founder-card__bio">
-                  Visionary founder directing enterprise strategy, brand elevation, and the rigorous pedagogical standards of Marvelous Salon & Academy. Combining astute legal intellect with an architectural eye for modern salon luxury.
+                  Visionary co-founder directing enterprise strategy, brand elevation, and the rigorous pedagogical standards of Marvelous Salon & Academy. Combining astute legal intellect with an architectural eye for modern salon luxury.
                 </p>
                 <div className="founder-card__tags">
                   <span className="founder-card__tag">Marvelous Salon & Academy</span>
@@ -1106,11 +1166,22 @@ export function App() {
                   </p>
                 </div>
                 <p className="founder-card__bio">
-                  Managing Director and celebrated celebrity makeup artist, recognized on national platforms including the Glam India Award. Master of bespoke bridal transformations, editorial aesthetic design, and premier luxury client experiences.
+                  Managing Director and celebrated celebrity makeup artist, honored on prestigious national platforms. Recipient of the Dazzling Star Award presented by Bollywood icon Gulshan Grover, and the Glam India BRO Business Award presented by Mahima Chaudhary. Master of haute bridal transformations and editorial luxury aesthetics.
                 </p>
+                <div className="founder-card__awards-strip">
+                  <div className="founder-card__award-item">
+                    <img src="/assets/celebrities/ashna-gulshan-grover.jpg" alt="Dazzling Star Award presented by Gulshan Grover" className="founder-card__award-thumb" />
+                    <span>Dazzling Star Award · Gulshan Grover</span>
+                  </div>
+                  <div className="founder-card__award-item">
+                    <img src="/assets/celebrities/ashna-mahima-award.jpg" alt="Glam India Award presented by Mahima Chaudhary" className="founder-card__award-thumb" />
+                    <span>Glam India Award · Mahima Chaudhary</span>
+                  </div>
+                </div>
                 <div className="founder-card__tags">
                   <span className="founder-card__tag">Managing Director, Marvelous Salon</span>
                   <span className="founder-card__tag">Celebrity Makeup Artist</span>
+                  <span className="founder-card__tag">Dazzling Star Awardee</span>
                   <span className="founder-card__tag">Glam India Award Winner</span>
                 </div>
               </div>
@@ -1122,14 +1193,17 @@ export function App() {
       <EditorialStories />
       <Expansion />
       <BrandLegacy />
+      <BrandPartners />
+      <FranchiseSection />
+      <ArtGallery />
       <section id="ashok-vihar" className="local-research-section" style={{padding:"90px 6vw",background:"#f3ede7",color:"#35261c"}}>
         <span style={{fontSize:10,letterSpacing:".18em"}}>ASHOK VIHAR / NEW DELHI</span>
         <h2 style={{fontSize:"clamp(36px,5vw,68px)",fontWeight:300,letterSpacing:"-.05em"}}>Your neighbourhood.<br/>A world of beauty.</h2>
         <p style={{maxWidth:640,lineHeight:1.9}}>Haircuts, colour, styling and hair spa. Bridal, party and groom makeup. Nail care, facials and grooming for women and men—bring your plans, and discuss a personalised service with the salon.</p>
         <h3 style={{fontSize:30,fontWeight:300,marginTop:45}}>Marvelous Salon Academy</h3>
-        <p style={{maxWidth:640,lineHeight:1.9}}>Explore training in hair, makeup, skin and nail artistry. Contact the academy for current courses, practical learning, fees and the next intake.</p>
+        <p style={{maxWidth:640,lineHeight:1.9}}>Explore professional training in hair design, advanced makeup artistry, clinical skin therapy and nail couture. Contact the academy for current diploma syllabi, practical clinics, fees and the next intake.</p>
         <div style={{display:"flex",flexWrap:"wrap",gap:28,marginTop:30,fontSize:12}}>
-          <a href="https://www.google.com/maps/search/?api=1&query=Marvelous+Salon+Ashok+Vihar+Delhi" target="_blank" rel="noreferrer" style={{color:"inherit"}}>Find the salon on Google Maps ↗</a>
+          <a href="https://share.google/HPsdlqEjNmCPmcgkR" target="_blank" rel="noreferrer" style={{color:"inherit"}}>Find the salon on Google Maps ↗</a>
           <a href="https://www.justdial.com/Delhi/Marvelous-Beauty-Hair-Make-Up-Studio-Above-Bengali-Sweets-Deep-Market-Ashok-Vihar/011PXX11-XX11-130429104034-Y8Y6_BZDET/photos" target="_blank" rel="noreferrer" style={{color:"inherit"}}>Browse the public salon photo gallery ↗</a>
         </div>
       </section>
@@ -1143,8 +1217,26 @@ export function App() {
             <p className="booking-desc">
               Experience personalized couture consultations in our private atelier suites.
             </p>
+
+            <div className="booking-contact-channels">
+              <a href="tel:+919891110587" className="booking-phone-chip">
+                <span>Direct Concierge:</span> <strong>+91 9891110587</strong>
+              </a>
+              <a href="tel:+918929121284" className="booking-phone-chip">
+                <span>Academy & Bookings:</span> <strong>+91 8929121284</strong>
+              </a>
+              <a
+                href="https://instagram.com/Marvelous_Salon_Academy"
+                target="_blank"
+                rel="noreferrer"
+                className="booking-phone-chip"
+              >
+                <span>Instagram:</span> <strong>@Marvelous_Salon_Academy</strong>
+              </a>
+            </div>
+
             <div className="booking-actions">
-              <a href="https://www.google.com/maps/search/?api=1&query=Marvelous+Salon+Ashok+Vihar+Delhi" target="_blank" rel="noreferrer" className="hero__cta-primary booking__cta-primary">
+              <a href="https://share.google/HPsdlqEjNmCPmcgkR" target="_blank" rel="noreferrer" className="hero__cta-primary booking__cta-primary">
                 Find & Contact the Salon
               </a>
               <button
@@ -1156,7 +1248,7 @@ export function App() {
               </button>
             </div>
             <p className="booking-address">
-              Ashok Vihar, New Delhi · Confirm the branch address and current hours before your visit.
+              Ashok Vihar & Model Town, New Delhi · Confirm the branch address and current hours before your visit.
             </p>
           </div>
         </div>
@@ -1166,11 +1258,13 @@ export function App() {
       <footer className="site-footer">
         <div className="editorial-container site-footer__inner">
           <div className="site-footer__brand">
-            <span className="hero__logo-monogram site-footer__monogram">M</span>
-            <span className="site-footer__name">MΛRVELOUS SALON</span>
+            <span className="site-footer__monogram-wrap">
+              <MarvelousEmblem className="site-footer__emblem-svg" />
+            </span>
+            <span className="site-footer__name">MARVELOUS SALON & ACADEMY</span>
           </div>
           <p className="site-footer__copy">
-            © 2026 Marvelous Salon Atelier. Beauty Beyond Ordinary.
+            © 2026 Marvelous Salon & Academy. Beauty Beyond Ordinary. · <a href="https://www.curiouskaizer.com/" target="_blank" rel="noopener" style={{ color: "inherit", textDecoration: "none", opacity: 0.55 }} title="Curious Kaizer - Luxury Web Design & Development Agency">Crafted by Curious Kaizer</a>
           </p>
         </div>
       </footer>
@@ -1185,18 +1279,27 @@ export function App() {
           aria-label="Skip the Marvelous Salon introduction"
         >
           <div className="brand-lockup splash__lockup" aria-hidden="true">
-            <span className="brand-word">
-              {BRAND_LETTERS.map((item, index) => (
-                <span
-                  key={index}
-                  className={`brand-char photo-text ${
-                    item.isLambda ? "brand-char--lambda" : ""
-                  } ${letterStates[index] ? "brand-char--visible" : ""}`}
-                >
-                  {item.char}
-                </span>
-              ))}
-            </span>
+            <div className="brand-title-row splash__title-row">
+              <div
+                className={`brand-emblem-wrap splash__emblem-wrap ${
+                  subVisible ? "splash__sub--visible" : ""
+                }`}
+              >
+                <MarvelousEmblem className="brand-emblem-svg splash__emblem-svg" />
+              </div>
+              <span className="brand-word">
+                {BRAND_LETTERS.map((item, index) => (
+                  <span
+                    key={index}
+                    className={`brand-char photo-text ${
+                      letterStates[index] ? "brand-char--visible" : ""
+                    }`}
+                  >
+                    {item.char}
+                  </span>
+                ))}
+              </span>
+            </div>
             <span className="brand-salon-row splash__salon-row">
               <span
                 className={`brand-rule splash__rule-left ${
@@ -1208,7 +1311,7 @@ export function App() {
                   subVisible ? "splash__sub--visible" : ""
                 }`}
               >
-                SALON
+                SALON & ACADEMY
               </span>
               <span
                 className={`brand-rule splash__rule-right ${
@@ -1225,7 +1328,7 @@ export function App() {
             </span>
           </div>
           <span className="sr-only">
-            Marvelous Salon — Beauty Beyond Ordinary
+            Marvelous Salon & Academy — Beauty Beyond Ordinary
           </span>
         </button>
       )}

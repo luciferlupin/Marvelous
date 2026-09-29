@@ -1,3 +1,195 @@
 .brand-legacy{height:340vh;position:relative;background:#e8ddcc;color:#34261c;--legacy-progress:0}.legacy-stage{height:100vh;position:sticky;top:0;overflow:hidden;padding:105px 6vw 35px;box-sizing:border-box;display:flex;flex-direction:column;background:linear-gradient(120deg,#f5eee4,#e4d5bf)}.legacy-header{display:flex;justify-content:space-between;align-items:start;gap:20px;border-bottom:1px solid #76594233;padding-bottom:22px}.legacy-header>span,.legacy-footer>span{font-size:8px;letter-spacing:.2em}.legacy-header p{margin:0;font-size:23px;line-height:1.25;letter-spacing:-.04em}.legacy-header em{font-family:Georgia,serif;color:#8b6746}.legacy-scenes{position:relative;flex:1;min-height:390px}.legacy-chapter{position:absolute;inset:0;display:grid;grid-template-columns:1.25fr 1fr;align-items:center;gap:4vw;opacity:0;pointer-events:none;transform:translate3d(0,calc(var(--distance,0)*-65px),0) scale(.96);transition:opacity .45s,scale .45s}.legacy-chapter.legacy-active{opacity:1;transform:translate3d(0,calc(var(--distance,0)*-40px),0) scale(1)}.legacy-number{font-size:clamp(120px,21vw,320px);font-weight:200;letter-spacing:-.09em;line-height:1;color:#765536;font-variant-numeric:tabular-nums}.legacy-word{font-family:Georgia,serif;font-size:clamp(75px,11vw,170px);font-style:italic;letter-spacing:-.07em}.legacy-caption>span{font-size:10px;letter-spacing:.18em}.legacy-caption h2{font-weight:300;font-size:clamp(28px,3.8vw,54px);letter-spacing:-.05em;line-height:1.12;max-width:480px;margin:22px 0}.legacy-caption p{font-size:13px;line-height:1.9;max-width:370px;color:#725d48}.legacy-edition{position:absolute;bottom:20px;right:0;font-size:10px;letter-spacing:.2em;color:#8b7157}.legacy-footer{display:flex;align-items:center;gap:25px;padding-top:25px;border-top:1px solid #76594233}.legacy-track{height:2px;flex:1;background:#a4886333;overflow:hidden}.legacy-track i{display:block;height:100%;background:#765536;transform:scaleX(var(--legacy-progress));transform-origin:left}
-@media(max-width:700px),(max-height:700px){.brand-legacy{height:auto}.legacy-stage{position:relative;height:auto;padding:80px 22px 35px}.legacy-header{flex-wrap:wrap}.legacy-header>span:last-child{display:none}.legacy-header p{font-size:21px}.legacy-scenes{min-height:0}.legacy-chapter,.legacy-chapter.legacy-active{position:relative;inset:auto;opacity:1;transform:none;grid-template-columns:1fr;gap:25px;padding:55px 0;border-bottom:1px solid #76594233}.legacy-number{font-size:140px}.legacy-word{font-size:86px}.legacy-caption h2{font-size:34px}.legacy-edition{bottom:15px}.legacy-footer{border-top:0;gap:12px}.legacy-footer>span{font-size:7px}}
+@media(max-width:700px),(max-height:700px){.brand-legacy{height:320vh;position:relative;background:#e8ddcc}.legacy-stage{height:100vh;height:100dvh;position:sticky;top:0;overflow:hidden;padding:clamp(86px,12vh,100px) 18px clamp(12px,2vh,18px);box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(120deg,#f5eee4,#e4d5bf)}.legacy-header{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;border-bottom:1px solid rgba(118,89,66,0.22);padding-bottom:8px}.legacy-header>span:last-child{display:none}.legacy-header p{font-size:clamp(0.95rem,3.8vw,1.15rem);line-height:1.2;letter-spacing:-0.03em}.legacy-scenes{position:relative;flex:1;min-height:0;display:flex;align-items:center;justify-content:center;width:100%}.legacy-chapter{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:0;opacity:0;pointer-events:none;transform:translate3d(0,calc(var(--distance,0)*-32px),0) scale(0.96);transition:opacity 0.42s cubic-bezier(0.22,1,0.36,1),transform 0.42s cubic-bezier(0.22,1,0.36,1);will-change:transform,opacity}.legacy-chapter.legacy-active{opacity:1;pointer-events:auto;transform:translate3d(0,calc(var(--distance,0)*-18px),0) scale(1)}.legacy-number{font-size:clamp(64px,16vw,98px);font-weight:200;line-height:0.92;letter-spacing:-0.06em;margin-bottom:4px;color:#765536}.legacy-word{font-family:Georgia,serif;font-size:clamp(36px,10vw,56px);font-style:italic;line-height:0.95;margin-bottom:4px}.legacy-caption>span{font-size:0.58rem;letter-spacing:0.16em;font-weight:650;color:#8b6746;text-transform:uppercase}.legacy-caption h2{font-size:clamp(1.15rem,4.2vw,1.5rem);font-weight:300;letter-spacing:-0.04em;line-height:1.18;margin:4px 0 6px;color:#34261c}.legacy-caption p{font-size:0.74rem;line-height:1.48;max-width:92%;color:#725d48}.legacy-edition{position:absolute;bottom:4px;right:0;font-size:0.6rem;letter-spacing:0.16em;color:#8b7157}.legacy-footer{display:flex;align-items:center;gap:10px;padding-top:8px;margin-top:auto;border-top:1px solid rgba(118,89,66,0.22);position:relative;z-index:2}.legacy-footer>span{font-size:0.54rem;letter-spacing:0.12em;font-weight:600}.legacy-track{height:2px;flex:1;background:rgba(164,136,99,0.25);overflow:hidden;border-radius:2px}.legacy-track i{display:block;height:100%;background:#765536;transform:scaleX(var(--legacy-progress));transform-origin:left;will-change:transform}}
 @media(prefers-reduced-motion:reduce){.brand-legacy{height:auto}.legacy-stage{height:auto;position:relative}.legacy-scenes{min-height:0}.legacy-chapter,.legacy-chapter.legacy-active{position:relative;opacity:1;transform:none;transition:none;padding:50px 0;border-bottom:1px solid #76594233}.legacy-track{display:none}}
+
+.celebrity-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 0 0;
+  border-top: 1px dashed rgba(118, 89, 66, 0.25);
+  margin-top: 10px;
+  font-family: "Montserrat", sans-serif;
+  flex-wrap: wrap;
+}
+
+.celebrity-bar__label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #765536;
+  white-space: nowrap;
+}
+
+.celebrity-bar__names {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.celebrity-bar__item {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: #34261c;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.celebrity-bar__avatar {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid rgba(164, 136, 99, 0.45);
+  box-shadow: 0 2px 6px rgba(44, 26, 14, 0.15);
+}
+
+.celebrity-bar__name {
+  font-weight: 550;
+  letter-spacing: -0.01em;
+}
+
+.celebrity-bar__dot {
+  color: #a48863;
+  font-size: 0.6rem;
+}
+
+/* Chapter 2: Icons Photographic Showcase */
+.legacy-icons-showcase {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  position: relative;
+}
+
+.legacy-icons-card {
+  position: relative;
+  width: clamp(140px, 15vw, 200px);
+  height: clamp(200px, 22vw, 290px);
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(229, 206, 176, 0.45);
+  box-shadow: 0 12px 30px rgba(44, 26, 14, 0.22);
+  transform: translateY(0);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease;
+  background: #140d09;
+}
+
+.legacy-icons-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 18px 40px rgba(44, 26, 14, 0.32);
+  z-index: 10;
+}
+
+.legacy-icons-card--stage {
+  width: clamp(240px, 26vw, 360px);
+  height: clamp(200px, 22vw, 290px);
+}
+
+.legacy-icons-card--stage:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+.legacy-icons-stage-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  padding: 4px 10px;
+  background: rgba(18, 11, 8, 0.85);
+  border: 1px solid rgba(229, 206, 176, 0.45);
+  border-radius: 9999px;
+  backdrop-filter: blur(8px);
+  z-index: 2;
+}
+
+.legacy-icons-stage-badge span {
+  font-size: 0.52rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #e5ceb0;
+  text-transform: uppercase;
+}
+
+.legacy-icons-card--secondary {
+  transform: translateY(20px);
+}
+
+.legacy-icons-card--secondary:hover {
+  transform: translateY(12px) scale(1.02);
+}
+
+.legacy-icons-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  display: block;
+}
+
+.legacy-icons-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 8px 10px;
+  background: linear-gradient(to top, rgba(14, 8, 5, 0.92) 0%, rgba(14, 8, 5, 0.4) 70%, transparent 100%);
+  color: #faf7f2;
+  font-size: 0.62rem;
+  font-weight: 550;
+  letter-spacing: 0.02em;
+  text-align: center;
+  backdrop-filter: blur(4px);
+}
+
+.legacy-icons-link {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 14px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #765536;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(118, 85, 54, 0.35);
+  padding-bottom: 3px;
+  transition: color 0.3s, border-color 0.3s, transform 0.3s;
+}
+
+.legacy-icons-link:hover {
+  color: #2c1a0e;
+  border-color: #2c1a0e;
+  transform: translateX(4px);
+}
+
+@media (max-width: 700px) {
+  .legacy-icons-showcase {
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+  .legacy-icons-card {
+    width: 88px;
+    height: 125px;
+    border-radius: 8px;
+  }
+  .legacy-icons-card--secondary {
+    transform: translateY(8px);
+  }
+  .legacy-icons-card--tertiary {
+    display: none;
+  }
+  .legacy-icons-caption {
+    font-size: 0.5rem;
+    padding: 4px 6px;
+  }
+  .celebrity-bar__avatar {
+    width: 18px;
+    height: 18px;
+  }
+  .celebrity-bar__item {
+    font-size: 0.65rem;
+    gap: 6px;
+  }
+}

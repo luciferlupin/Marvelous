@@ -14,5 +14,30 @@
 .roadmap-meter{display:flex;align-items:center;gap:25px;margin-top:25px;font-size:7px;letter-spacing:.2em;color:#c9ae8f}
 .roadmap-meter i{position:relative;height:1px;background:#d2ae7933;flex:1}
 .roadmap-meter i:after{content:'';position:absolute;left:calc(var(--road-p)*100%);top:-3px;width:7px;height:7px;background:#e7c598;border-radius:50%;box-shadow:0 0 14px #e7c59877}
-@media(max-width:700px),(max-height:700px){.roadmap-scroll{height:auto}.roadmap-scroll .expansion{height:auto;position:relative;overflow:visible;padding:90px 22px 40px}.roadmap-scroll .exp-rail:after{display:none}.roadmap-scroll .exp-detail{min-height:0}.roadmap-scroll .expansion h2{font-size:40px}.roadmap-scroll .exp-rail button{opacity:1;transform:none}.roadmap-scroll .exp-stamp{padding:10px 0}}
+@media(max-width:700px),(max-height:700px){
+  .roadmap-scroll{height:280vh;background:#241c17;position:relative;--road-p:0}
+  .roadmap-scroll .expansion{height:100vh;height:100dvh;position:sticky;top:0;overflow:hidden;padding:clamp(86px,12vh,100px) 18px clamp(12px,2vh,18px);box-sizing:border-box;display:flex;flex-direction:column;justify-content:flex-start;gap:clamp(6px,1.2vh,10px)}
+  .roadmap-scroll .exp-kicker{font-size:0.56rem;letter-spacing:0.18em;line-height:1.4;margin:0 0 2px;color:#c9ae8f;display:block}
+  .roadmap-scroll .expansion h2{font-size:clamp(1.4rem,4.8vw,1.85rem);margin:0;line-height:1.14;transform:translate3d(0,calc(var(--road-p,0)*-6px),0)}
+  .roadmap-scroll .exp-intro{font-size:0.7rem;line-height:1.4;margin:0;color:rgba(250,247,242,0.75)}
+  .roadmap-scroll .exp-rail{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin-top:2px;position:relative;padding-bottom:4px}
+  .roadmap-scroll .exp-rail:after{content:'';position:absolute;left:0;bottom:0;height:2px;width:100%;background:#e7c598;transform:scaleX(var(--road-p,0));transform-origin:left;box-shadow:0 0 12px rgba(203,167,122,0.65);will-change:transform}
+  .roadmap-scroll .exp-rail button{z-index:1;transform:translate3d(0,calc((1 - var(--stop-p,1))*12px),0);opacity:calc(0.45 + var(--stop-p,1)*0.55);padding:6px 9px;border-radius:10px;background:rgba(36,28,23,0.75);border:1px solid rgba(229,206,176,0.22);transition:all 220ms ease;will-change:transform,opacity;display:flex;flex-direction:column;align-items:flex-start}
+  .roadmap-scroll .exp-rail button[aria-pressed="true"]{border-color:#e7c598;background:rgba(231,197,152,0.18);box-shadow:0 4px 14px rgba(0,0,0,0.35)}
+  .roadmap-scroll .exp-rail button .exp-index{margin-bottom:1px;font-size:7.5px;color:#baa487}
+  .roadmap-scroll .exp-rail button .exp-dot{margin-bottom:3px;width:6px;height:6px}
+  .roadmap-scroll .exp-rail button strong{font-size:0.78rem;margin:1px 0 0;line-height:1.2}
+  .roadmap-scroll .exp-rail button small{font-size:0.56rem;letter-spacing:0.08em}
+  .roadmap-scroll .exp-rail button .exp-explore{display:none}
+  .roadmap-scroll .exp-detail{opacity:1 !important;animation:none !important;min-height:72px;padding:8px 12px;margin:0;background:rgba(18,11,7,0.7);border:1px solid rgba(229,206,176,0.2);border-radius:12px;display:flex;align-items:center;justify-content:space-between;gap:10px;transition:all 280ms ease}
+  .roadmap-scroll .exp-detail>div:first-child{flex:1}
+  .roadmap-scroll .exp-detail .exp-kicker{font-size:0.55rem;margin-bottom:2px}
+  .roadmap-scroll .exp-detail h3{font-size:1.15rem;margin:1px 0 3px;font-weight:400}
+  .roadmap-scroll .exp-detail p{font-size:0.68rem;line-height:1.38;margin:0;color:rgba(250,247,242,0.85)}
+  .roadmap-scroll .exp-stamp{font-size:1.35rem;padding:3px 8px;border-radius:8px;border-left:1px solid rgba(229,206,176,0.25);margin-top:0;white-space:nowrap}
+  .roadmap-scroll .exp-stamp small{font-size:7px;margin-top:3px}
+  .roadmap-scroll .exp-footer{display:flex;flex-wrap:wrap;gap:4px 10px;padding-top:6px;font-size:0.55rem;border-top:1px solid rgba(229,206,176,0.15)}
+  .roadmap-meter{display:flex;align-items:center;gap:12px;margin-top:auto;font-size:0.55rem;letter-spacing:0.14em;padding-bottom:2px}
+  .roadmap-meter i:after{left:calc(var(--road-p,0)*100%);will-change:left}
+}
 @media(prefers-reduced-motion:reduce){.roadmap-scroll{height:auto}.roadmap-scroll .expansion{height:auto;position:relative}.roadmap-scroll *{animation:none!important;transform:none!important;transition:none!important}.roadmap-scroll .exp-rail button{opacity:1}.roadmap-meter{display:none}}

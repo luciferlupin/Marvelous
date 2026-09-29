@@ -1,0 +1,872 @@
+[
+  {
+    "id": 1,
+    "source": "media_1789502372673.jpg",
+    "cropped_file": "marvelous_art_01.jpg",
+    "width": 471,
+    "height": 505,
+    "aspect_ratio": 1.07,
+    "mode": "light",
+    "bounds": [
+      0,
+      148,
+      471,
+      653
+    ]
+  },
+  {
+    "id": 2,
+    "source": "media_1789502372676.jpg",
+    "cropped_file": "marvelous_art_02.jpg",
+    "width": 471,
+    "height": 505,
+    "aspect_ratio": 1.07,
+    "mode": "light",
+    "bounds": [
+      0,
+      148,
+      471,
+      653
+    ]
+  },
+  {
+    "id": 3,
+    "source": "media_1789502372688.jpg",
+    "cropped_file": "marvelous_art_03.jpg",
+    "width": 471,
+    "height": 618,
+    "aspect_ratio": 1.31,
+    "mode": "light",
+    "bounds": [
+      0,
+      167,
+      471,
+      785
+    ]
+  },
+  {
+    "id": 4,
+    "source": "media_1789502372702.jpg",
+    "cropped_file": "marvelous_art_04.jpg",
+    "width": 471,
+    "height": 496,
+    "aspect_ratio": 1.05,
+    "mode": "light",
+    "bounds": [
+      0,
+      148,
+      471,
+      644
+    ]
+  },
+  {
+    "id": 5,
+    "source": "media_1789502372706.jpg",
+    "cropped_file": "marvelous_art_05.jpg",
+    "width": 471,
+    "height": 609,
+    "aspect_ratio": 1.29,
+    "mode": "light",
+    "bounds": [
+      0,
+      167,
+      471,
+      776
+    ]
+  },
+  {
+    "id": 6,
+    "source": "media_1789502454850.jpg",
+    "cropped_file": "marvelous_art_06.jpg",
+    "width": 471,
+    "height": 588,
+    "aspect_ratio": 1.25,
+    "mode": "light",
+    "bounds": [
+      0,
+      145,
+      471,
+      733
+    ]
+  },
+  {
+    "id": 7,
+    "source": "media_1789502454858.jpg",
+    "cropped_file": "marvelous_art_07.jpg",
+    "width": 458,
+    "height": 588,
+    "aspect_ratio": 1.28,
+    "mode": "light",
+    "bounds": [
+      0,
+      145,
+      458,
+      733
+    ]
+  },
+  {
+    "id": 8,
+    "source": "media_1789502454873.jpg",
+    "cropped_file": "marvelous_art_08.jpg",
+    "width": 471,
+    "height": 507,
+    "aspect_ratio": 1.08,
+    "mode": "light",
+    "bounds": [
+      0,
+      146,
+      471,
+      653
+    ]
+  },
+  {
+    "id": 9,
+    "source": "media_1789502454883.jpg",
+    "cropped_file": "marvelous_art_09.jpg",
+    "width": 471,
+    "height": 676,
+    "aspect_ratio": 1.44,
+    "mode": "light",
+    "bounds": [
+      0,
+      143,
+      471,
+      819
+    ]
+  },
+  {
+    "id": 10,
+    "source": "media_1789502454895.jpg",
+    "cropped_file": "marvelous_art_10.jpg",
+    "width": 471,
+    "height": 677,
+    "aspect_ratio": 1.44,
+    "mode": "light",
+    "bounds": [
+      0,
+      151,
+      471,
+      828
+    ]
+  },
+  {
+    "id": 11,
+    "source": "media_1789502489344.jpg",
+    "cropped_file": "marvelous_art_11.jpg",
+    "width": 471,
+    "height": 676,
+    "aspect_ratio": 1.44,
+    "mode": "light",
+    "bounds": [
+      0,
+      181,
+      471,
+      857
+    ]
+  },
+  {
+    "id": 12,
+    "source": "media_1789502489354.jpg",
+    "cropped_file": "marvelous_art_12.jpg",
+    "width": 471,
+    "height": 622,
+    "aspect_ratio": 1.32,
+    "mode": "light",
+    "bounds": [
+      0,
+      148,
+      471,
+      770
+    ]
+  },
+  {
+    "id": 13,
+    "source": "media_1789502489362.jpg",
+    "cropped_file": "marvelous_art_13.jpg",
+    "width": 471,
+    "height": 623,
+    "aspect_ratio": 1.32,
+    "mode": "light",
+    "bounds": [
+      0,
+      149,
+      471,
+      772
+    ]
+  },
+  {
+    "id": 14,
+    "source": "media_1789502489371.jpg",
+    "cropped_file": "marvelous_art_14.jpg",
+    "width": 471,
+    "height": 624,
+    "aspect_ratio": 1.32,
+    "mode": "light",
+    "bounds": [
+      0,
+      191,
+      471,
+      815
+    ]
+  },
+  {
+    "id": 15,
+    "source": "media_1789502489382.jpg",
+    "cropped_file": "marvelous_art_15.jpg",
+    "width": 471,
+    "height": 624,
+    "aspect_ratio": 1.32,
+    "mode": "light",
+    "bounds": [
+      0,
+      191,
+      471,
+      815
+    ]
+  },
+  {
+    "id": 16,
+    "source": "media_1789502508133.jpg",
+    "cropped_file": "marvelous_art_16.jpg",
+    "width": 471,
+    "height": 677,
+    "aspect_ratio": 1.44,
+    "mode": "light",
+    "bounds": [
+      0,
+      156,
+      471,
+      833
+    ]
+  },
+  {
+    "id": 17,
+    "source": "media_1789502508143.jpg",
+    "cropped_file": "marvelous_art_17.jpg",
+    "width": 471,
+    "height": 623,
+    "aspect_ratio": 1.32,
+    "mode": "light",
+    "bounds": [
+      0,
+      164,
+      471,
+      787
+    ]
+  },
+  {
+    "id": 18,
+    "source": "media_1789502508153.jpg",
+    "cropped_file": "marvelous_art_18.jpg",
+    "width": 471,
+    "height": 677,
+    "aspect_ratio": 1.44,
+    "mode": "light",
+    "bounds": [
+      0,
+      156,
+      471,
+      833
+    ]
+  },
+  {
+    "id": 19,
+    "source": "media_1789502508157.jpg",
+    "cropped_file": "marvelous_art_19.jpg",
+    "width": 471,
+    "height": 623,
+    "aspect_ratio": 1.32,
+    "mode": "light",
+    "bounds": [
+      0,
+      164,
+      471,
+      787
+    ]
+  },
+  {
+    "id": 20,
+    "source": "media_1789502508172.jpg",
+    "cropped_file": "marvelous_art_20.jpg",
+    "width": 471,
+    "height": 588,
+    "aspect_ratio": 1.25,
+    "mode": "light",
+    "bounds": [
+      0,
+      151,
+      471,
+      739
+    ]
+  },
+  {
+    "id": 21,
+    "source": "media_1789502527317.jpg",
+    "cropped_file": "marvelous_art_21.jpg",
+    "width": 471,
+    "height": 623,
+    "aspect_ratio": 1.32,
+    "mode": "light",
+    "bounds": [
+      0,
+      149,
+      471,
+      772
+    ]
+  },
+  {
+    "id": 22,
+    "source": "media_1789502527331.jpg",
+    "cropped_file": "marvelous_art_22.jpg",
+    "width": 471,
+    "height": 588,
+    "aspect_ratio": 1.25,
+    "mode": "light",
+    "bounds": [
+      0,
+      142,
+      471,
+      730
+    ]
+  },
+  {
+    "id": 23,
+    "source": "media_1789502527343.jpg",
+    "cropped_file": "marvelous_art_23.jpg",
+    "width": 471,
+    "height": 622,
+    "aspect_ratio": 1.32,
+    "mode": "light",
+    "bounds": [
+      0,
+      148,
+      471,
+      770
+    ]
+  },
+  {
+    "id": 24,
+    "source": "media_1789502527353.jpg",
+    "cropped_file": "marvelous_art_24.jpg",
+    "width": 471,
+    "height": 588,
+    "aspect_ratio": 1.25,
+    "mode": "dark",
+    "bounds": [
+      0,
+      253,
+      471,
+      841
+    ]
+  },
+  {
+    "id": 25,
+    "source": "media_1789502527357.jpg",
+    "cropped_file": "marvelous_art_25.jpg",
+    "width": 471,
+    "height": 631,
+    "aspect_ratio": 1.34,
+    "mode": "light",
+    "bounds": [
+      0,
+      160,
+      471,
+      791
+    ]
+  },
+  {
+    "id": 26,
+    "source": "media_1789502540955.jpg",
+    "cropped_file": "marvelous_art_26.jpg",
+    "width": 471,
+    "height": 589,
+    "aspect_ratio": 1.25,
+    "mode": "light",
+    "bounds": [
+      0,
+      152,
+      471,
+      741
+    ]
+  },
+  {
+    "id": 27,
+    "source": "media_1789502540962.jpg",
+    "cropped_file": "marvelous_art_27.jpg",
+    "width": 471,
+    "height": 631,
+    "aspect_ratio": 1.34,
+    "mode": "light",
+    "bounds": [
+      0,
+      141,
+      471,
+      772
+    ]
+  },
+  {
+    "id": 28,
+    "source": "media_1789502540972.jpg",
+    "cropped_file": "marvelous_art_28.jpg",
+    "width": 471,
+    "height": 510,
+    "aspect_ratio": 1.08,
+    "mode": "light",
+    "bounds": [
+      0,
+      181,
+      471,
+      691
+    ]
+  },
+  {
+    "id": 29,
+    "source": "media_1789502540993.jpg",
+    "cropped_file": "marvelous_art_29.jpg",
+    "width": 471,
+    "height": 240,
+    "aspect_ratio": 0.51,
+    "mode": "light",
+    "bounds": [
+      0,
+      180,
+      471,
+      420
+    ]
+  },
+  {
+    "id": 30,
+    "source": "media_1789502540996.jpg",
+    "cropped_file": "marvelous_art_30.jpg",
+    "width": 471,
+    "height": 513,
+    "aspect_ratio": 1.09,
+    "mode": "light",
+    "bounds": [
+      0,
+      159,
+      471,
+      672
+    ]
+  },
+  {
+    "id": 31,
+    "source": "media_1789502553974.jpg",
+    "cropped_file": "marvelous_art_31.jpg",
+    "width": 471,
+    "height": 630,
+    "aspect_ratio": 1.34,
+    "mode": "light",
+    "bounds": [
+      0,
+      164,
+      471,
+      794
+    ]
+  },
+  {
+    "id": 32,
+    "source": "media_1789502553982.jpg",
+    "cropped_file": "marvelous_art_32.jpg",
+    "width": 471,
+    "height": 559,
+    "aspect_ratio": 1.19,
+    "mode": "light",
+    "bounds": [
+      0,
+      167,
+      471,
+      726
+    ]
+  },
+  {
+    "id": 33,
+    "source": "media_1789502553991.jpg",
+    "cropped_file": "marvelous_art_33.jpg",
+    "width": 471,
+    "height": 426,
+    "aspect_ratio": 0.9,
+    "mode": "light",
+    "bounds": [
+      0,
+      142,
+      471,
+      568
+    ]
+  },
+  {
+    "id": 34,
+    "source": "media_1789502554002.jpg",
+    "cropped_file": "marvelous_art_34.jpg",
+    "width": 471,
+    "height": 370,
+    "aspect_ratio": 0.79,
+    "mode": "light",
+    "bounds": [
+      0,
+      157,
+      471,
+      527
+    ]
+  },
+  {
+    "id": 35,
+    "source": "media_1789502554007.jpg",
+    "cropped_file": "marvelous_art_35.jpg",
+    "width": 471,
+    "height": 614,
+    "aspect_ratio": 1.3,
+    "mode": "light",
+    "bounds": [
+      0,
+      156,
+      471,
+      770
+    ]
+  },
+  {
+    "id": 36,
+    "source": "media_1789502569500.jpg",
+    "cropped_file": "marvelous_art_36.jpg",
+    "width": 471,
+    "height": 630,
+    "aspect_ratio": 1.34,
+    "mode": "light",
+    "bounds": [
+      0,
+      165,
+      471,
+      795
+    ]
+  },
+  {
+    "id": 37,
+    "source": "media_1789502569508.jpg",
+    "cropped_file": "marvelous_art_37.jpg",
+    "width": 471,
+    "height": 588,
+    "aspect_ratio": 1.25,
+    "mode": "light",
+    "bounds": [
+      0,
+      146,
+      471,
+      734
+    ]
+  },
+  {
+    "id": 38,
+    "source": "media_1789502569520.jpg",
+    "cropped_file": "marvelous_art_38.jpg",
+    "width": 471,
+    "height": 677,
+    "aspect_ratio": 1.44,
+    "mode": "light",
+    "bounds": [
+      0,
+      144,
+      471,
+      821
+    ]
+  },
+  {
+    "id": 39,
+    "source": "media_1789502569528.jpg",
+    "cropped_file": "marvelous_art_39.jpg",
+    "width": 471,
+    "height": 615,
+    "aspect_ratio": 1.31,
+    "mode": "light",
+    "bounds": [
+      0,
+      156,
+      471,
+      771
+    ]
+  },
+  {
+    "id": 40,
+    "source": "media_1789502569534.jpg",
+    "cropped_file": "marvelous_art_40.jpg",
+    "width": 471,
+    "height": 614,
+    "aspect_ratio": 1.3,
+    "mode": "light",
+    "bounds": [
+      0,
+      156,
+      471,
+      770
+    ]
+  },
+  {
+    "id": 41,
+    "source": "media_1789502583736.jpg",
+    "cropped_file": "marvelous_art_41.jpg",
+    "width": 471,
+    "height": 629,
+    "aspect_ratio": 1.34,
+    "mode": "light",
+    "bounds": [
+      0,
+      142,
+      471,
+      771
+    ]
+  },
+  {
+    "id": 42,
+    "source": "media_1789502583744.jpg",
+    "cropped_file": "marvelous_art_42.jpg",
+    "width": 471,
+    "height": 614,
+    "aspect_ratio": 1.3,
+    "mode": "light",
+    "bounds": [
+      0,
+      156,
+      471,
+      770
+    ]
+  },
+  {
+    "id": 43,
+    "source": "media_1789502583752.jpg",
+    "cropped_file": "marvelous_art_43.jpg",
+    "width": 471,
+    "height": 392,
+    "aspect_ratio": 0.83,
+    "mode": "dark",
+    "bounds": [
+      0,
+      180,
+      471,
+      572
+    ]
+  },
+  {
+    "id": 44,
+    "source": "media_1789502583763.jpg",
+    "cropped_file": "marvelous_art_44.jpg",
+    "width": 471,
+    "height": 414,
+    "aspect_ratio": 0.88,
+    "mode": "dark",
+    "bounds": [
+      0,
+      180,
+      471,
+      594
+    ]
+  },
+  {
+    "id": 45,
+    "source": "media_1789502583769.jpg",
+    "cropped_file": "marvelous_art_45.jpg",
+    "width": 471,
+    "height": 588,
+    "aspect_ratio": 1.25,
+    "mode": "light",
+    "bounds": [
+      0,
+      180,
+      471,
+      768
+    ]
+  },
+  {
+    "id": 46,
+    "source": "media_1789502597624.jpg",
+    "cropped_file": "marvelous_art_46.jpg",
+    "width": 471,
+    "height": 431,
+    "aspect_ratio": 0.92,
+    "mode": "dark",
+    "bounds": [
+      0,
+      152,
+      471,
+      583
+    ]
+  },
+  {
+    "id": 47,
+    "source": "media_1789502597655.jpg",
+    "cropped_file": "marvelous_art_47.jpg",
+    "width": 471,
+    "height": 392,
+    "aspect_ratio": 0.83,
+    "mode": "dark",
+    "bounds": [
+      0,
+      180,
+      471,
+      572
+    ]
+  },
+  {
+    "id": 48,
+    "source": "media_1789502597660.jpg",
+    "cropped_file": "marvelous_art_48.jpg",
+    "width": 1024,
+    "height": 575,
+    "aspect_ratio": 1.0,
+    "mode": "direct",
+    "bounds": [
+      0,
+      0,
+      1024,
+      575
+    ]
+  },
+  {
+    "id": 49,
+    "source": "media_1789502597668.jpg",
+    "cropped_file": "marvelous_art_49.jpg",
+    "width": 471,
+    "height": 460,
+    "aspect_ratio": 0.98,
+    "mode": "dark",
+    "bounds": [
+      0,
+      152,
+      471,
+      612
+    ]
+  },
+  {
+    "id": 50,
+    "source": "media_1789502644882.jpg",
+    "cropped_file": "marvelous_art_50.jpg",
+    "width": 471,
+    "height": 460,
+    "aspect_ratio": 0.98,
+    "mode": "dark",
+    "bounds": [
+      0,
+      152,
+      471,
+      612
+    ]
+  },
+  {
+    "id": 51,
+    "source": "media_1789502644892.jpg",
+    "cropped_file": "marvelous_art_51.jpg",
+    "width": 739,
+    "height": 415,
+    "aspect_ratio": 1.0,
+    "mode": "direct",
+    "bounds": [
+      0,
+      0,
+      739,
+      415
+    ]
+  },
+  {
+    "id": 52,
+    "source": "media_1789502644901.jpg",
+    "cropped_file": "marvelous_art_52.jpg",
+    "width": 1024,
+    "height": 576,
+    "aspect_ratio": 1.0,
+    "mode": "direct",
+    "bounds": [
+      0,
+      0,
+      1024,
+      576
+    ]
+  },
+  {
+    "id": 53,
+    "source": "media_1789502644933.jpg",
+    "cropped_file": "marvelous_art_53.jpg",
+    "width": 471,
+    "height": 392,
+    "aspect_ratio": 0.83,
+    "mode": "dark",
+    "bounds": [
+      0,
+      180,
+      471,
+      572
+    ]
+  },
+  {
+    "id": 54,
+    "source": "media_1789502644938.jpg",
+    "cropped_file": "marvelous_art_54.jpg",
+    "width": 471,
+    "height": 616,
+    "aspect_ratio": 1.31,
+    "mode": "dark",
+    "bounds": [
+      0,
+      152,
+      471,
+      768
+    ]
+  },
+  {
+    "id": 55,
+    "source": "media_1789502663688.jpg",
+    "cropped_file": "marvelous_art_55.jpg",
+    "width": 471,
+    "height": 406,
+    "aspect_ratio": 0.86,
+    "mode": "dark",
+    "bounds": [
+      0,
+      180,
+      471,
+      586
+    ]
+  },
+  {
+    "id": 56,
+    "source": "media_1789502663708.jpg",
+    "cropped_file": "marvelous_art_56.jpg",
+    "width": 471,
+    "height": 466,
+    "aspect_ratio": 0.99,
+    "mode": "dark",
+    "bounds": [
+      0,
+      180,
+      471,
+      646
+    ]
+  },
+  {
+    "id": 57,
+    "source": "media_1789502663721.jpg",
+    "cropped_file": "marvelous_art_57.jpg",
+    "width": 471,
+    "height": 443,
+    "aspect_ratio": 0.94,
+    "mode": "dark",
+    "bounds": [
+      0,
+      180,
+      471,
+      623
+    ]
+  },
+  {
+    "id": 58,
+    "source": "media_1789502663728.jpg",
+    "cropped_file": "marvelous_art_58.jpg",
+    "width": 1024,
+    "height": 768,
+    "aspect_ratio": 1.0,
+    "mode": "direct",
+    "bounds": [
+      0,
+      0,
+      1024,
+      768
+    ]
+  }
+]

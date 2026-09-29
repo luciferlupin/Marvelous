@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Marvelous Art Gallery — Verified Crops</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #110a07; color: #f5efe7; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; padding: 30px; }
+  h1 { font-weight: 300; letter-spacing: 0.08em; color: #e5ceb0; margin-bottom: 8px; font-size: 28px; }
+  p.sub { color: #a89a8f; margin-bottom: 24px; font-size: 14px; }
+  .filters { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 24px; }
+  .filter-btn { background: rgba(255,255,255,0.06); border: 1px solid rgba(229,206,176,0.3); color: #e5ceb0; padding: 6px 14px; border-radius: 20px; font-size: 12px; cursor: pointer; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
+  .card { background: rgba(255,255,255,0.03); border: 1px solid rgba(229,206,176,0.2); border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s, border-color 0.2s; }
+  .card:hover { transform: translateY(-3px); border-color: #e5ceb0; }
+  .card-img-wrap { width: 100%; height: 260px; background: #000; overflow: hidden; display: flex; align-items: center; justify-content: center; position: relative; }
+  .card img { width: 100%; height: 100%; object-fit: cover; }
+  .card-badge { position: absolute; top: 10px; left: 10px; background: rgba(18,11,7,0.85); color: #e5ceb0; font-size: 9px; letter-spacing: 0.12em; padding: 3px 8px; border-radius: 3px; border: 1px solid rgba(229,206,176,0.3); }
+  .card-year { position: absolute; top: 10px; right: 10px; background: rgba(18,11,7,0.85); color: #d0c0b0; font-size: 9px; padding: 3px 6px; border-radius: 3px; }
+  .card-content { padding: 14px; display: flex; flex-direction: column; gap: 4px; flex-grow: 1; }
+  .card-title { font-size: 14px; font-weight: 500; color: #fff; line-height: 1.3; }
+  .card-subtitle { font-size: 12px; color: #c4b5a5; }
+  .card-artist { font-size: 11px; color: #e5ceb0; margin-top: 4px; }
+  .card-meta { margin-top: auto; padding-top: 8px; border-top: 1px solid rgba(255,255,255,0.06); font-size: 10px; color: #7f7267; display: flex; justify-content: space-between; }
+</style>
+</head>
+<body>
+  <h1>MΛRVELOUS SALON · ART GALLERY CATALOG</h1>
+  <p class="sub">58 curated and cleanly cropped original high-fidelity works across Bridal Couture, Miss Multinational, Celebrity Makeovers, Schwarzkopf Masterclasses, and Ashok Vihar Atelier Sanctuary.</p>
+  
+  <div class="grid">
+
+    <div class="card" data-cat="bridal">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_01.jpg" alt="Editorial Photoshoot Transformation" loading="lazy" />
+        <span class="card-badge">BRIDAL COUTURE</span>
+        <span class="card-year">2018</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Editorial Photoshoot Transformation</h3>
+        <p class="card-subtitle">Haute Occasion Silhouette</p>
+        <p class="card-artist">MUA Bhavna Pahwa</p>
+        <div class="card-meta">
+          <span>#01 · 471x472</span>
+          <span>BRIDAL</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="bridal">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_02.jpg" alt="Editorial Photoshoot Transformation" loading="lazy" />
+        <span class="card-badge">BRIDAL COUTURE</span>
+        <span class="card-year">2018</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Editorial Photoshoot Transformation</h3>
+        <p class="card-subtitle">Haute Occasion Silhouette</p>
+        <p class="card-artist">MUA Bhavna Pahwa</p>
+        <div class="card-meta">
+          <span>#02 · 471x472</span>
+          <span>BRIDAL</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="international">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_03.jpg" alt="Miss USA 2018 · World Winner" loading="lazy" />
+        <span class="card-badge">GLOBAL PAGEANT</span>
+        <span class="card-year">2018</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Miss USA 2018 · World Winner</h3>
+        <p class="card-subtitle">Official Makeup by Bhavna Pahwa</p>
+        <p class="card-artist">MUA Bhavna Pahwa</p>
+        <div class="card-meta">
+          <span>#03 · 471x472</span>
+          <span>INTERNATIONAL</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="international">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_04.jpg" alt="Miss Multinational Mexico" loading="lazy" />
+        <span class="card-badge">GLOBAL PAGEANT</span>
+        <span class="card-year">2018</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Miss Multinational Mexico</h3>
+        <p class="card-subtitle">Tania Morales · Pageant Glamour</p>
+        <p class="card-artist">Marvelous Salon Partner</p>
+        <div class="card-meta">
+          <span>#04 · 471x463</span>
+          <span>INTERNATIONAL</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="international">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_05.jpg" alt="Miss USA 2018 · World Winner" loading="lazy" />
+        <span class="card-badge">GLOBAL PAGEANT</span>
+        <span class="card-year">2018</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Miss USA 2018 · World Winner</h3>
+        <p class="card-subtitle">Official Makeup by Bhavna Pahwa</p>
+        <p class="card-artist">MUA Bhavna Pahwa</p>
+        <div class="card-meta">
+          <span>#05 · 471x463</span>
+          <span>INTERNATIONAL</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="celebrity">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_06.jpg" alt="Taapsee Pannu · Bollywood Glamour" loading="lazy" />
+        <span class="card-badge">CELEBRITY & AWARDS</span>
+        <span class="card-year">2019</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Taapsee Pannu · Bollywood Glamour</h3>
+        <p class="card-subtitle">Haute Makeover by Bhavna Pahwa</p>
+        <p class="card-artist">MUA Bhavna Pahwa</p>
+        <div class="card-meta">
+          <span>#06 · 471x589</span>
+          <span>CELEBRITY</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="celebrity">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_07.jpg" alt="Taapsee Pannu · Bollywood Glamour" loading="lazy" />
+        <span class="card-badge">CELEBRITY & AWARDS</span>
+        <span class="card-year">2019</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Taapsee Pannu · Bollywood Glamour</h3>
+        <p class="card-subtitle">Haute Makeover by Bhavna Pahwa</p>
+        <p class="card-artist">MUA Bhavna Pahwa</p>
+        <div class="card-meta">
+          <span>#07 · 471x574</span>
+          <span>CELEBRITY</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="celebrity">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_08.jpg" alt="Taapsee Pannu · Bollywood Glamour" loading="lazy" />
+        <span class="card-badge">CELEBRITY & AWARDS</span>
+        <span class="card-year">2019</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Taapsee Pannu · Bollywood Glamour</h3>
+        <p class="card-subtitle">Haute Makeover by Bhavna Pahwa</p>
+        <p class="card-artist">MUA Bhavna Pahwa</p>
+        <div class="card-meta">
+          <span>#08 · 471x439</span>
+          <span>CELEBRITY</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="academy">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_09.jpg" alt="Marvelous Salon Academy Training" loading="lazy" />
+        <span class="card-badge">ACADEMY</span>
+        <span class="card-year">2019</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Marvelous Salon Academy Training</h3>
+        <p class="card-subtitle">Professional Hair & Makeup Diploma</p>
+        <p class="card-artist">Marvelous Academy</p>
+        <div class="card-meta">
+          <span>#09 · 471x590</span>
+          <span>ACADEMY</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="academy">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_10.jpg" alt="Marvelous Salon Academy Training" loading="lazy" />
+        <span class="card-badge">ACADEMY</span>
+        <span class="card-year">2019</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Marvelous Salon Academy Training</h3>
+        <p class="card-subtitle">Professional Hair & Makeup Diploma</p>
+        <p class="card-artist">Marvelous Academy</p>
+        <div class="card-meta">
+          <span>#10 · 471x590</span>
+          <span>ACADEMY</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="academy">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_11.jpg" alt="Marvelous Salon Academy Training" loading="lazy" />
+        <span class="card-badge">ACADEMY</span>
+        <span class="card-year">2019</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Marvelous Salon Academy Training</h3>
+        <p class="card-subtitle">Professional Hair & Makeup Diploma</p>
+        <p class="card-artist">Marvelous Academy</p>
+        <div class="card-meta">
+          <span>#11 · 471x589</span>
+          <span>ACADEMY</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="academy">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_12.jpg" alt="Marvelous Salon Academy Training" loading="lazy" />
+        <span class="card-badge">ACADEMY</span>
+        <span class="card-year">2019</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Marvelous Salon Academy Training</h3>
+        <p class="card-subtitle">Professional Hair & Makeup Diploma</p>
+        <p class="card-artist">Marvelous Academy</p>
+        <div class="card-meta">
+          <span>#12 · 471x589</span>
+          <span>ACADEMY</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="international">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_13.jpg" alt="Miss Multinational India '18" loading="lazy" />
+        <span class="card-badge">GLOBAL PAGEANT</span>
+        <span class="card-year">2019</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Miss Multinational India '18</h3>
+        <p class="card-subtitle">Simran Sharma · Atelier Styling</p>
+        <p class="card-artist">Marvelous Salon Partner</p>
+        <div class="card-meta">
+          <span>#13 · 471x589</span>
+          <span>INTERNATIONAL</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="international">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_14.jpg" alt="Miss Multinational 2018 Finale" loading="lazy" />
+        <span class="card-badge">GLOBAL PAGEANT</span>
+        <span class="card-year">2019</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Miss Multinational 2018 Finale</h3>
+        <p class="card-subtitle">Official Beauty & Makeup Partner</p>
+        <p class="card-artist">Marvelous Salon & Academy</p>
+        <div class="card-meta">
+          <span>#14 · 471x590</span>
+          <span>INTERNATIONAL</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="international">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_15.jpg" alt="Miss Multinational 2018 Finale" loading="lazy" />
+        <span class="card-badge">GLOBAL PAGEANT</span>
+        <span class="card-year">2019</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Miss Multinational 2018 Finale</h3>
+        <p class="card-subtitle">Official Beauty & Makeup Partner</p>
+        <p class="card-artist">Marvelous Salon & Academy</p>
+        <div class="card-meta">
+          <span>#15 · 471x540</span>
+          <span>INTERNATIONAL</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="international">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_16.jpg" alt="Miss Multinational New Zealand" loading="lazy" />
+        <span class="card-badge">GLOBAL PAGEANT</span>
+        <span class="card-year">2019</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Miss Multinational New Zealand</h3>
+        <p class="card-subtitle">Simrat Gill · Crown Makeup</p>
+        <p class="card-artist">MUA Bhavna Pahwa</p>
+        <div class="card-meta">
+          <span>#16 · 471x589</span>
+          <span>INTERNATIONAL</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="international">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_17.jpg" alt="Miss Multinational New Zealand" loading="lazy" />
+        <span class="card-badge">GLOBAL PAGEANT</span>
+        <span class="card-year">2019</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Miss Multinational New Zealand</h3>
+        <p class="card-subtitle">Simrat Gill · Crown Makeup</p>
+        <p class="card-artist">MUA Bhavna Pahwa</p>
+        <div class="card-meta">
+          <span>#17 · 471x550</span>
+          <span>INTERNATIONAL</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="international">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_18.jpg" alt="Miss Multinational New Zealand" loading="lazy" />
+        <span class="card-badge">GLOBAL PAGEANT</span>
+        <span class="card-year">2019</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Miss Multinational New Zealand</h3>
+        <p class="card-subtitle">Simrat Gill · Crown Makeup</p>
+        <p class="card-artist">MUA Bhavna Pahwa</p>
+        <div class="card-meta">
+          <span>#18 · 471x556</span>
+          <span>INTERNATIONAL</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="international">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_19.jpg" alt="Miss Multinational New Zealand" loading="lazy" />
+        <span class="card-badge">GLOBAL PAGEANT</span>
+        <span class="card-year">2019</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Miss Multinational New Zealand</h3>
+        <p class="card-subtitle">Simrat Gill · Crown Makeup</p>
+        <p class="card-artist">MUA Bhavna Pahwa</p>
+        <div class="card-meta">
+          <span>#19 · 471x590</span>
+          <span>INTERNATIONAL</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="international">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_20.jpg" alt="Miss Multinational Myanmar" loading="lazy" />
+        <span class="card-badge">GLOBAL PAGEANT</span>
+        <span class="card-year">2019</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Miss Multinational Myanmar</h3>
+        <p class="card-subtitle">Pan Thway · International Stage</p>
+        <p class="card-artist">Marvelous Salon Partner</p>
+        <div class="card-meta">
+          <span>#20 · 471x590</span>
+          <span>INTERNATIONAL</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="international">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_21.jpg" alt="Miss Multinational India '18" loading="lazy" />
+        <span class="card-badge">GLOBAL PAGEANT</span>
+        <span class="card-year">2019</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Miss Multinational India '18</h3>
+        <p class="card-subtitle">Simran Sharma · Atelier Styling</p>
+        <p class="card-artist">Marvelous Salon Partner</p>
+        <div class="card-meta">
+          <span>#21 · 471x551</span>
+          <span>INTERNATIONAL</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="international">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_22.jpg" alt="Miss Multinational Mexico" loading="lazy" />
+        <span class="card-badge">GLOBAL PAGEANT</span>
+        <span class="card-year">2019</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Miss Multinational Mexico</h3>
+        <p class="card-subtitle">Tania Morales · Pageant Glamour</p>
+        <p class="card-artist">Marvelous Salon Partner</p>
+        <div class="card-meta">
+          <span>#22 · 471x590</span>
+          <span>INTERNATIONAL</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="international">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_23.jpg" alt="Miss Multinational Malaysia" loading="lazy" />
+        <span class="card-badge">GLOBAL PAGEANT</span>
+        <span class="card-year">2019</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Miss Multinational Malaysia</h3>
+        <p class="card-subtitle">Haute Runway Transformation</p>
+        <p class="card-artist">Marvelous Salon Partner</p>
+        <div class="card-meta">
+          <span>#23 · 471x524</span>
+          <span>INTERNATIONAL</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="celebrity">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_24.jpg" alt="Mahima Chaudhary · Special Appearance" loading="lazy" />
+        <span class="card-badge">CELEBRITY & AWARDS</span>
+        <span class="card-year">2020</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Mahima Chaudhary · Special Appearance</h3>
+        <p class="card-subtitle">Atelier Masterpiece at Crowne Plaza</p>
+        <p class="card-artist">Marvelous Salon</p>
+        <div class="card-meta">
+          <span>#24 · 471x315</span>
+          <span>CELEBRITY</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="celebrity">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_25.jpg" alt="Mahima Chaudhary · Special Appearance" loading="lazy" />
+        <span class="card-badge">CELEBRITY & AWARDS</span>
+        <span class="card-year">2020</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Mahima Chaudhary · Special Appearance</h3>
+        <p class="card-subtitle">Atelier Masterpiece at Crowne Plaza</p>
+        <p class="card-artist">Marvelous Salon</p>
+        <div class="card-meta">
+          <span>#25 · 471x590</span>
+          <span>CELEBRITY</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="celebrity">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_26.jpg" alt="Sana Khan · Star Transformation" loading="lazy" />
+        <span class="card-badge">CELEBRITY & AWARDS</span>
+        <span class="card-year">2020</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Sana Khan · Star Transformation</h3>
+        <p class="card-subtitle">Red Carpet Makeover at Crowne Plaza</p>
+        <p class="card-artist">Marvelous Salon</p>
+        <div class="card-meta">
+          <span>#26 · 471x590</span>
+          <span>CELEBRITY</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="academy">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_27.jpg" alt="Marvelous Salon Academy Training" loading="lazy" />
+        <span class="card-badge">ACADEMY</span>
+        <span class="card-year">2020</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Marvelous Salon Academy Training</h3>
+        <p class="card-subtitle">Professional Hair & Makeup Diploma</p>
+        <p class="card-artist">Marvelous Academy</p>
+        <div class="card-meta">
+          <span>#27 · 471x590</span>
+          <span>ACADEMY</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="celebrity">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_28.jpg" alt="National Excellence Award" loading="lazy" />
+        <span class="card-badge">CELEBRITY & AWARDS</span>
+        <span class="card-year">2020</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">National Excellence Award</h3>
+        <p class="card-subtitle">National Institute of Education & Research</p>
+        <p class="card-artist">Marvelous Leadership</p>
+        <div class="card-meta">
+          <span>#28 · 471x470</span>
+          <span>CELEBRITY</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="celebrity">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_29.jpg" alt="Sana Khan · Star Transformation" loading="lazy" />
+        <span class="card-badge">CELEBRITY & AWARDS</span>
+        <span class="card-year">2020</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Sana Khan · Star Transformation</h3>
+        <p class="card-subtitle">Red Carpet Makeover at Crowne Plaza</p>
+        <p class="card-artist">Marvelous Salon</p>
+        <div class="card-meta">
+          <span>#29 · 471x284</span>
+          <span>CELEBRITY</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="celebrity">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_30.jpg" alt="National Excellence Award" loading="lazy" />
+        <span class="card-badge">CELEBRITY & AWARDS</span>
+        <span class="card-year">2020</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">National Excellence Award</h3>
+        <p class="card-subtitle">National Institute of Education & Research</p>
+        <p class="card-artist">Marvelous Leadership</p>
+        <div class="card-meta">
+          <span>#30 · 471x434</span>
+          <span>CELEBRITY</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="academy">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_31.jpg" alt="Marvelous Salon Academy Training" loading="lazy" />
+        <span class="card-badge">ACADEMY</span>
+        <span class="card-year">2020</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Marvelous Salon Academy Training</h3>
+        <p class="card-subtitle">Professional Hair & Makeup Diploma</p>
+        <p class="card-artist">Marvelous Academy</p>
+        <div class="card-meta">
+          <span>#31 · 471x463</span>
+          <span>ACADEMY</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="celebrity">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_32.jpg" alt="National Excellence Award" loading="lazy" />
+        <span class="card-badge">CELEBRITY & AWARDS</span>
+        <span class="card-year">2020</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">National Excellence Award</h3>
+        <p class="card-subtitle">National Institute of Education & Research</p>
+        <p class="card-artist">Marvelous Leadership</p>
+        <div class="card-meta">
+          <span>#32 · 471x443</span>
+          <span>CELEBRITY</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="academy">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_33.jpg" alt="Marvelous Salon Academy Training" loading="lazy" />
+        <span class="card-badge">ACADEMY</span>
+        <span class="card-year">2020</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Marvelous Salon Academy Training</h3>
+        <p class="card-subtitle">Professional Hair & Makeup Diploma</p>
+        <p class="card-artist">Marvelous Academy</p>
+        <div class="card-meta">
+          <span>#33 · 471x297</span>
+          <span>ACADEMY</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="academy">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_34.jpg" alt="Marvelous Salon Academy Training" loading="lazy" />
+        <span class="card-badge">ACADEMY</span>
+        <span class="card-year">2020</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Marvelous Salon Academy Training</h3>
+        <p class="card-subtitle">Professional Hair & Makeup Diploma</p>
+        <p class="card-artist">Marvelous Academy</p>
+        <div class="card-meta">
+          <span>#34 · 471x330</span>
+          <span>ACADEMY</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="hair">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_35.jpg" alt="Schwarzkopf Professional × Florian Hurel" loading="lazy" />
+        <span class="card-badge">MASTERCLASS</span>
+        <span class="card-year">2020</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Schwarzkopf Professional × Florian Hurel</h3>
+        <p class="card-subtitle">Masterclass & Global Colour Innovations</p>
+        <p class="card-artist">Marvelous Academy</p>
+        <div class="card-meta">
+          <span>#35 · 471x589</span>
+          <span>HAIR</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="academy">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_36.jpg" alt="Marvelous Salon Academy Training" loading="lazy" />
+        <span class="card-badge">ACADEMY</span>
+        <span class="card-year">2020</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Marvelous Salon Academy Training</h3>
+        <p class="card-subtitle">Professional Hair & Makeup Diploma</p>
+        <p class="card-artist">Marvelous Academy</p>
+        <div class="card-meta">
+          <span>#36 · 471x590</span>
+          <span>ACADEMY</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="academy">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_37.jpg" alt="Marvelous Salon Academy Training" loading="lazy" />
+        <span class="card-badge">ACADEMY</span>
+        <span class="card-year">2020</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Marvelous Salon Academy Training</h3>
+        <p class="card-subtitle">Professional Hair & Makeup Diploma</p>
+        <p class="card-artist">Marvelous Academy</p>
+        <div class="card-meta">
+          <span>#37 · 471x589</span>
+          <span>ACADEMY</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="academy">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_38.jpg" alt="Marvelous Salon Academy Training" loading="lazy" />
+        <span class="card-badge">ACADEMY</span>
+        <span class="card-year">2020</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Marvelous Salon Academy Training</h3>
+        <p class="card-subtitle">Professional Hair & Makeup Diploma</p>
+        <p class="card-artist">Marvelous Academy</p>
+        <div class="card-meta">
+          <span>#38 · 471x589</span>
+          <span>ACADEMY</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="academy">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_39.jpg" alt="Marvelous Salon Academy Training" loading="lazy" />
+        <span class="card-badge">ACADEMY</span>
+        <span class="card-year">2020</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Marvelous Salon Academy Training</h3>
+        <p class="card-subtitle">Professional Hair & Makeup Diploma</p>
+        <p class="card-artist">Marvelous Academy</p>
+        <div class="card-meta">
+          <span>#39 · 471x590</span>
+          <span>ACADEMY</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="academy">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_40.jpg" alt="Marvelous Salon Academy Training" loading="lazy" />
+        <span class="card-badge">ACADEMY</span>
+        <span class="card-year">2020</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Marvelous Salon Academy Training</h3>
+        <p class="card-subtitle">Professional Hair & Makeup Diploma</p>
+        <p class="card-artist">Marvelous Academy</p>
+        <div class="card-meta">
+          <span>#40 · 471x589</span>
+          <span>ACADEMY</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="academy">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_41.jpg" alt="Marvelous Salon Academy Training" loading="lazy" />
+        <span class="card-badge">ACADEMY</span>
+        <span class="card-year">2020</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Marvelous Salon Academy Training</h3>
+        <p class="card-subtitle">Professional Hair & Makeup Diploma</p>
+        <p class="card-artist">Marvelous Academy</p>
+        <div class="card-meta">
+          <span>#41 · 471x590</span>
+          <span>ACADEMY</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="academy">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_42.jpg" alt="Marvelous Salon Academy Training" loading="lazy" />
+        <span class="card-badge">ACADEMY</span>
+        <span class="card-year">2020</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Marvelous Salon Academy Training</h3>
+        <p class="card-subtitle">Professional Hair & Makeup Diploma</p>
+        <p class="card-artist">Marvelous Academy</p>
+        <div class="card-meta">
+          <span>#42 · 471x589</span>
+          <span>ACADEMY</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="sanctuary">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_43.jpg" alt="Ashok Vihar Luxury Salon Sanctuary" loading="lazy" />
+        <span class="card-badge">THE ATELIER</span>
+        <span class="card-year">Heritage Edit</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Ashok Vihar Luxury Salon Sanctuary</h3>
+        <p class="card-subtitle">Architectural Styling Suites & Spas</p>
+        <p class="card-artist">Marvelous Salon Interiors</p>
+        <div class="card-meta">
+          <span>#43 · 471x235</span>
+          <span>SANCTUARY</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="hair">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_44.jpg" alt="Schwarzkopf Professional × Florian Hurel" loading="lazy" />
+        <span class="card-badge">MASTERCLASS</span>
+        <span class="card-year">Heritage Edit</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Schwarzkopf Professional × Florian Hurel</h3>
+        <p class="card-subtitle">Masterclass & Global Colour Innovations</p>
+        <p class="card-artist">Marvelous Academy</p>
+        <div class="card-meta">
+          <span>#44 · 471x236</span>
+          <span>HAIR</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="hair">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_45.jpg" alt="Schwarzkopf Professional × Florian Hurel" loading="lazy" />
+        <span class="card-badge">MASTERCLASS</span>
+        <span class="card-year">Heritage Edit</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Schwarzkopf Professional × Florian Hurel</h3>
+        <p class="card-subtitle">Masterclass & Global Colour Innovations</p>
+        <p class="card-artist">Marvelous Academy</p>
+        <div class="card-meta">
+          <span>#45 · 471x270</span>
+          <span>HAIR</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="sanctuary">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_46.jpg" alt="Ashok Vihar Luxury Salon Sanctuary" loading="lazy" />
+        <span class="card-badge">THE ATELIER</span>
+        <span class="card-year">Heritage Edit</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Ashok Vihar Luxury Salon Sanctuary</h3>
+        <p class="card-subtitle">Architectural Styling Suites & Spas</p>
+        <p class="card-artist">Marvelous Salon Interiors</p>
+        <div class="card-meta">
+          <span>#46 · 471x253</span>
+          <span>SANCTUARY</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="sanctuary">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_47.jpg" alt="Ashok Vihar Luxury Salon Sanctuary" loading="lazy" />
+        <span class="card-badge">THE ATELIER</span>
+        <span class="card-year">Heritage Edit</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Ashok Vihar Luxury Salon Sanctuary</h3>
+        <p class="card-subtitle">Architectural Styling Suites & Spas</p>
+        <p class="card-artist">Marvelous Salon Interiors</p>
+        <div class="card-meta">
+          <span>#47 · 471x236</span>
+          <span>SANCTUARY</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="couture">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_48.jpg" alt="Signature Haute Artistry" loading="lazy" />
+        <span class="card-badge">HAUTE COUTURE</span>
+        <span class="card-year">Heritage Edit</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Signature Haute Artistry</h3>
+        <p class="card-subtitle">Atelier Creation</p>
+        <p class="card-artist">Marvelous Salon & Academy</p>
+        <div class="card-meta">
+          <span>#48 · 1024x575</span>
+          <span>COUTURE</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="sanctuary">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_49.jpg" alt="Ashok Vihar Luxury Salon Sanctuary" loading="lazy" />
+        <span class="card-badge">THE ATELIER</span>
+        <span class="card-year">Heritage Edit</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Ashok Vihar Luxury Salon Sanctuary</h3>
+        <p class="card-subtitle">Architectural Styling Suites & Spas</p>
+        <p class="card-artist">Marvelous Salon Interiors</p>
+        <div class="card-meta">
+          <span>#49 · 471x270</span>
+          <span>SANCTUARY</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="sanctuary">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_50.jpg" alt="Ashok Vihar Luxury Salon Sanctuary" loading="lazy" />
+        <span class="card-badge">THE ATELIER</span>
+        <span class="card-year">Heritage Edit</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Ashok Vihar Luxury Salon Sanctuary</h3>
+        <p class="card-subtitle">Architectural Styling Suites & Spas</p>
+        <p class="card-artist">Marvelous Salon Interiors</p>
+        <div class="card-meta">
+          <span>#50 · 471x270</span>
+          <span>SANCTUARY</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="couture">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_51.jpg" alt="Signature Haute Artistry" loading="lazy" />
+        <span class="card-badge">HAUTE COUTURE</span>
+        <span class="card-year">Heritage Edit</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Signature Haute Artistry</h3>
+        <p class="card-subtitle">Atelier Creation</p>
+        <p class="card-artist">Marvelous Salon & Academy</p>
+        <div class="card-meta">
+          <span>#51 · 739x415</span>
+          <span>COUTURE</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="couture">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_52.jpg" alt="Signature Haute Artistry" loading="lazy" />
+        <span class="card-badge">HAUTE COUTURE</span>
+        <span class="card-year">Heritage Edit</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Signature Haute Artistry</h3>
+        <p class="card-subtitle">Atelier Creation</p>
+        <p class="card-artist">Marvelous Salon & Academy</p>
+        <div class="card-meta">
+          <span>#52 · 1024x576</span>
+          <span>COUTURE</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="sanctuary">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_53.jpg" alt="Ashok Vihar Luxury Salon Sanctuary" loading="lazy" />
+        <span class="card-badge">THE ATELIER</span>
+        <span class="card-year">Heritage Edit</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Ashok Vihar Luxury Salon Sanctuary</h3>
+        <p class="card-subtitle">Architectural Styling Suites & Spas</p>
+        <p class="card-artist">Marvelous Salon Interiors</p>
+        <div class="card-meta">
+          <span>#53 · 471x209</span>
+          <span>SANCTUARY</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="sanctuary">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_54.jpg" alt="Ashok Vihar Luxury Salon Sanctuary" loading="lazy" />
+        <span class="card-badge">THE ATELIER</span>
+        <span class="card-year">Heritage Edit</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Ashok Vihar Luxury Salon Sanctuary</h3>
+        <p class="card-subtitle">Architectural Styling Suites & Spas</p>
+        <p class="card-artist">Marvelous Salon Interiors</p>
+        <div class="card-meta">
+          <span>#54 · 471x270</span>
+          <span>SANCTUARY</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="sanctuary">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_55.jpg" alt="Ashok Vihar Luxury Salon Sanctuary" loading="lazy" />
+        <span class="card-badge">THE ATELIER</span>
+        <span class="card-year">Heritage Edit</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Ashok Vihar Luxury Salon Sanctuary</h3>
+        <p class="card-subtitle">Architectural Styling Suites & Spas</p>
+        <p class="card-artist">Marvelous Salon Interiors</p>
+        <div class="card-meta">
+          <span>#55 · 471x258</span>
+          <span>SANCTUARY</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="sanctuary">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_56.jpg" alt="Ashok Vihar Luxury Salon Sanctuary" loading="lazy" />
+        <span class="card-badge">THE ATELIER</span>
+        <span class="card-year">Heritage Edit</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Ashok Vihar Luxury Salon Sanctuary</h3>
+        <p class="card-subtitle">Architectural Styling Suites & Spas</p>
+        <p class="card-artist">Marvelous Salon Interiors</p>
+        <div class="card-meta">
+          <span>#56 · 471x270</span>
+          <span>SANCTUARY</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="sanctuary">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_57.jpg" alt="Ashok Vihar Luxury Salon Sanctuary" loading="lazy" />
+        <span class="card-badge">THE ATELIER</span>
+        <span class="card-year">Heritage Edit</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Ashok Vihar Luxury Salon Sanctuary</h3>
+        <p class="card-subtitle">Architectural Styling Suites & Spas</p>
+        <p class="card-artist">Marvelous Salon Interiors</p>
+        <div class="card-meta">
+          <span>#57 · 471x270</span>
+          <span>SANCTUARY</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card" data-cat="couture">
+      <div class="card-img-wrap">
+        <img src="/assets/gallery/marvelous_art_58.jpg" alt="Signature Haute Artistry" loading="lazy" />
+        <span class="card-badge">HAUTE COUTURE</span>
+        <span class="card-year">Heritage Edit</span>
+      </div>
+      <div class="card-content">
+        <h3 class="card-title">Signature Haute Artistry</h3>
+        <p class="card-subtitle">Atelier Creation</p>
+        <p class="card-artist">Marvelous Salon & Academy</p>
+        <div class="card-meta">
+          <span>#58 · 1024x768</span>
+          <span>COUTURE</span>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</body>
+</html>

@@ -19,23 +19,38 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - Extend the homepage with original, premium 2D editorial graphics, spacious Apple-like bento layouts, and sticky section-overlap scroll choreography while preserving the established warm ivory, champagne, and espresso luxury palette.
 - Treat the site as an expensive, high-luxury digital experience: continue adding substantive editorial sections, refined micro-interactions, reversible scroll-linked motion, layered 2D creative assets, and more complex but silky animation systems rather than static card grids.
 
-- Build only the Marvelous Salon splash-to-hero transition for now. Do not add navigation or the rest of the website until the user provides that direction.
-- Use the supplied Marvelous Salon lockup as the source of truth. Rebuild its letterforms as crisp real typography (including the custom crossbar-less chevron `Λ` for the second letter).
-- Reveal the hero image directly through the logo letters using an SVG cutout mask on the warm beige background (`#f3ede7`), keeping the rest of the screen hidden until exit.
-- Maintain zero blur on the hero image, typography, or exit transition. The hero photo remains at 100% resolution, fixed position, and sharp clarity.
-- Animate the brand letters entering one by one with staggered timing.
-- Keep the logo lockup and forward zoom precisely centered in the viewport (`transform-origin: center center`).
-- As the zoom into the logo begins, the warm beige background fades out continuously (`opacity: 1 -> 0`) while the full hero photograph smoothly and continuously emerges into view with zero flickering, flashing, or GPU texture drops.
-- The hero section now functions as the primary luxury salon main page, featuring a refined top navigation header, editorial description, elevated Call-to-Action controls ("Reserve an Experience" / "Explore Services"), and curated specialty details alongside the interactive replay button.
-- Fast loading is guaranteed by preloading `/assets/marvelous-salon-hero.png` with high fetch priority in `index.html`.
-- The hero section content (header, brand editorial, CTAs, and footer) is pre-mounted and preloaded behind the splash, revealing in direct, harmonious synchronization as the camera zooms into the logo aperture.
-- The intro sequence is brisk and silky: snappy letter entrance (320ms), graceful hold (1.4s), and fluid continuous zoom and fade (1.35s) directly into the main page experience.
+- Official Brand Lockup & Identity (Source of Truth):
+  - Brand Name: **Marvelous Salon & Academy**.
+  - Lockup Anatomy: Feminine silhouette profile emblem facing left with ornate hair/floral flourish, positioned to the left of `MARVELOUS`. The `MARVELOUS` wordmark features authentic chiseled Tuscan inline serif letterforms (with the official stylized letter `A`, replacing the earlier placeholder chevron `Λ`). Below is the subtitle `SALON & ACADEMY` in bold, uppercase geometric sans-serif flanked by hairlines.
+  - Production Assets: Vector SVG [`marvelous-logo.svg`](file:///Users/harshitgoyal/marvelous/public/assets/marvelous-logo.svg), standalone emblem [`marvelous-emblem.svg`](file:///Users/harshitgoyal/marvelous/public/assets/marvelous-emblem.svg), and high-res PNGs in ivory/champagne gold and bronze/obsidian.
+  - Official Google Maps / Business Profile Link: `https://share.google/HPsdlqEjNmCPmcgkR`. Used across all Google Maps and contact CTA links.
+  - Official Phones: `+91 9891110587` & `+91 8929121284`. Official Instagram: `@Marvelous_Salon_Academy`.
+- Founding Heritage & Lineage (1998 · 25+ Years):
+  - Founders: **Bhavna Pahwa** (Founder) & **Avinash Pahwa** (Co-Founder).
+  - Next Generation: **Ashna Pahwa** (Managing Director & Celebrity MUA, Glam India Award Winner) & **Hriday/Hridhan Pahwa** (Founder, Advocate & Legal Counsel).
+  - Stated Mission: *"To establish a salon that blends artistry, expertise, and world-class products under one roof."*
+  - Verified Celebrity Client Roster: **Sudha Chandran**, **Mahima Chaudhary**, **Simran Kaur**, **Sana Khan**, **Mukul Dev**, and **Gulshan Grover**.
+- Curated Global Brand Portfolio (10 World-Leading Houses):
+  - Hair & Trichology: Kérastase Paris, Redken 5th Avenue NYC, L’Oréal Paris Professional, Kevin.Murphy, Wella Professionals, Olaplex, Schwarzkopf Professional, Mounir.
+  - Clinical Skincare: Dermalogica, HydraFacial.
+  - Note: Source deck references "8 Premium Brands" in text but illustrates 10 logos; all 10 are transparently showcased.
+- Franchise Expansion Formats:
+  - **Marvelous Salon (Flagship / Full-Service Model)**: Area 1,100–4,000 sq. ft. · Investment ₹75L–₹1Cr · Franchise Fee ₹20L · Royalty 7%. Designed for prime catchments, flagship destinations, and high-volume VIP salon luxury.
+  - **Marvelous Studio (Compact / High-Efficiency Model)**: Area 500–1,100 sq. ft. · Investment ₹25L–₹50L · Franchise Fee ₹10L · Royalty 5%. Designed for high-street retail, malls, and Tier-2/3 growth cities.
+  - **5 Pillars of Franchise Support**: 01 Operations (SOPs, workflows), 02 Marketing (launch ads, influencers), 03 Hiring & Training (Academy standards), 04 Sales Framework (memberships, packages), 05 Technology (CRM, billing, real-time analytics).
+  - **Business Case**: Repeat monthly customers, non-cyclical essential grooming, 365-day demand across wedding/festive seasons, and secular consumer shift to branded luxury.
+- Splash-to-Hero transition:
+  - Animate the brand silhouette emblem and `MARVELOUS` letterforms entering with staggered liquid timing.
+  - Reveal `SALON & ACADEMY` and hairlines cleanly underneath before the aperture zoom.
+  - Maintain zero blur on the hero image, typography, or exit transition. The hero photo remains at 100% resolution, fixed position, and sharp clarity.
+  - Keep the logo lockup and forward zoom precisely centered in the viewport (`transform-origin: center center`).
+  - As the zoom into the logo begins, the warm beige background fades out continuously (`opacity: 1 -> 0`) while the full hero photograph smoothly and continuously emerges into view with zero flickering, flashing, or GPU texture drops.
 - Clutter-free luxury branding & visual hierarchy:
-  - Top navigation uses clean, spacious typographic links (`Services`, `The Atelier`, `Stylists`, `Editorial`) with champagne hover underlines, omitting heavy pill containers for an airy architectural feel.
-  - Top-left header features a minimalist monogram lockup (`M | ATELIER`) to prevent visual repetition with the central brand name.
-  - The hero centerpiece maintains clear, scannable focal points: `MΛRVELOUS` title, champagne `SALON` row with flanking hairlines, `BEAUTY BEYOND ORDINARY` accent tag, and a punchy 12-word editorial statement.
-  - Calls-to-Action feature a dominant, luminous primary button (`Reserve an Experience`) paired with a refined, quiet secondary action (`Explore Services →`).
-  - Hero footer is completely clutter-free: bottom specialties removed per user direction, keeping the lower vista open with the interactive frosted glass replay button resting in the bottom-right corner.
+  - Top navigation uses clean, spacious typographic links (`Method`, `The Atelier`, `Codes`, `Leadership`, `Art Gallery`, `Concierge`) with champagne hover underlines.
+  - Top-left header features the new circular monogram containing the feminine silhouette emblem paired with `MARVELOUS SALON & ACADEMY`.
+  - The hero centerpiece maintains clear, scannable focal points: the new official silhouette emblem + `MARVELOUS` title, champagne `SALON & ACADEMY` row with flanking hairlines, and `BEAUTY BEYOND ORDINARY` accent tag.
+  - Calls-to-Action feature a dominant, luminous primary button (`Reserve an Experience`) paired with a refined secondary action (`Explore The Atelier →`).
+  - Hero footer provides the interactive frosted glass replay button resting in the bottom-right corner.
 - Motion scroll transitions & interactive depth:
   - Scrolling is smoothly enabled once the splash zoom finishes (`phase === "complete"`).
   - The hero typography features differential parallax rates: `MΛRVELOUS` shifts upward with subtle letter-spacing expansion, while the category, tagline, description, and CTAs float with staggered vertical velocity and silky blur-free dissolves.
@@ -98,3 +113,19 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
   - Elevated `BEAUTY BEYOND ORDINARY` to `font-weight: 600` with radiant gold contrast (`#fdf0dc`).
   - Solidified secondary CTA (`EXPLORE SERVICES →`) with frosted obsidian glass backdrop (`rgba(18, 11, 7, 0.75)`), champagne gold border (`1.5px`), and white typography.
   - Enhanced top navigation links, logo sub-mark, and scroll cue with crisp text shadows and typography weights.
+- **Apple-Style Living Art Gallery (`#gallery`)**:
+  - **Visual Primacy & Zero Clutter**: Pure photograph-first Apple presentation with zero boilerplate copy, no redundant multi-sentence text blocks, and no repetitive artist tags.
+  - **Curated High-Resolution Catalog**: Curated dataset of 30 magazine-grade archival assets across 6 categories (`bridal`, `pageant`, `celebrity`, `hair`, `academy`, `sanctuary`), filtering out low-resolution and redundant shots.
+  - **Header & Filter Bar**:
+    - Clean eyebrow `THE ARCHIVE` with minimalist headline `Thirty Years in Light & Form.` and single-line summary.
+    - Segmented Apple-style frosted pill bar with silky active state (`All Works`, `Bridal Couture`, `Pageants`, `Celebrity`, `Coiffure`, `Academy`, `Atelier`) and touch-scroll track, omitting noisy counter badges.
+  - **Apple Bento Grid Layout**:
+    - Imagery occupies 100% of the card area with 20px rounded corners, hairline champagne borders, and deep obsidian shadows.
+    - Card surfaces are completely uncluttered—no corner badges covering faces or hair.
+    - Minimal floating frosted bottom caption surfaces title, subtitle, and year cleanly over a subtle vignette scrim.
+  - **Cinema Lightbox Modal via `createPortal`**:
+    - Mounts directly into `document.body` via React portal, completely escaping any ancestor stacking contexts.
+    - High-resolution photograph occupies 85%+ of the viewport with zero blur.
+    - Floating frosted capsule counter (`01 / 30`), minimalist circular `✕` close button, frosted circular chevrons (`‹`, `›`), and floating bottom capsule with title, metadata, and `Book Experience ↗` action.
+    - Full keyboard (`Escape`, `ArrowLeft`, `ArrowRight`) and mobile touch-swipe gesture support.
+

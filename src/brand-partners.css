@@ -1,0 +1,267 @@
+/* ==========================================================================
+   Brand Partnerships Showcase (Curated Global Beauty Houses)
+   ========================================================================== */
+
+.brand-partners {
+  position: relative;
+  z-index: 4;
+  padding: clamp(80px, 10vw, 130px) 0;
+  background: #140d09;
+  color: #faf7f2;
+  border-top: 1px solid rgba(229, 206, 176, 0.12);
+  border-bottom: 1px solid rgba(229, 206, 176, 0.12);
+  overflow: hidden;
+}
+
+.partners-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+  margin-bottom: clamp(40px, 6vw, 64px);
+  flex-wrap: wrap;
+}
+
+.partners-header__left {
+  max-width: 640px;
+}
+
+.partners-header__right {
+  max-width: 440px;
+  padding-left: 24px;
+  border-left: 1px solid rgba(229, 206, 176, 0.3);
+}
+
+.partners-quote {
+  font-family: "Cinzel", "Times New Roman", serif;
+  font-size: clamp(0.95rem, 1.4vw, 1.15rem);
+  font-style: italic;
+  line-height: 1.6;
+  color: #e5ceb0;
+  margin: 0 0 10px;
+}
+
+.partners-quote-author {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  color: rgba(250, 247, 242, 0.6);
+  text-transform: uppercase;
+}
+
+/* Filter Bar */
+.partners-filter {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.partners-filter__btn {
+  padding: 8px 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(229, 206, 176, 0.22);
+  border-radius: 9999px;
+  color: rgba(250, 247, 242, 0.75);
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.74rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  transition: all 260ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.partners-filter__btn:hover {
+  background: rgba(229, 206, 176, 0.12);
+  border-color: rgba(229, 206, 176, 0.5);
+  color: #ffffff;
+}
+
+.partners-filter__btn--active {
+  background: #e5ceb0 !important;
+  color: #1a0f0a !important;
+  border-color: #e5ceb0 !important;
+  font-weight: 600;
+  box-shadow: 0 4px 16px rgba(229, 206, 176, 0.25);
+}
+
+/* Grid Layout */
+.partners-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.partner-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 26px 24px;
+  background: rgba(255, 255, 255, 0.025);
+  border: 1px solid rgba(229, 206, 176, 0.16);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1), border-color 280ms ease, background-color 280ms ease, box-shadow 280ms ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.partner-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #e5ceb0, transparent);
+  opacity: 0;
+  transition: opacity 280ms ease;
+}
+
+.partner-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(229, 206, 176, 0.45);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.45);
+}
+
+.partner-card:hover::before {
+  opacity: 1;
+}
+
+.partner-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(229, 206, 176, 0.1);
+}
+
+.partner-card__index {
+  font-family: "Cinzel", serif;
+  font-size: 0.85rem;
+  color: #e5ceb0;
+  letter-spacing: 0.1em;
+}
+
+.partner-card__category {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(250, 247, 242, 0.55);
+}
+
+.partner-card__body {
+  margin-bottom: 24px;
+}
+
+.partner-card__name {
+  font-family: "Cinzel", "Times New Roman", serif;
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: #faf7f2;
+  margin: 0 0 6px;
+  letter-spacing: 0.02em;
+}
+
+.partner-card__origin {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #e5ceb0;
+  margin-bottom: 12px;
+}
+
+.partner-card__tagline {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #f3ede7;
+  margin: 0 0 10px;
+  line-height: 1.45;
+}
+
+.partner-card__desc {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.74rem;
+  line-height: 1.7;
+  color: rgba(250, 247, 242, 0.68);
+  margin: 0;
+}
+
+.partner-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 14px;
+  border-top: 1px solid rgba(229, 206, 176, 0.08);
+}
+
+.partner-card__status {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.64rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(229, 206, 176, 0.8);
+}
+
+.partner-card__dot {
+  color: #e5ceb0;
+  font-size: 0.75rem;
+}
+
+/* Note Bar */
+.partners-note {
+  margin-top: 48px;
+  padding: 18px 26px;
+  background: rgba(229, 206, 176, 0.06);
+  border: 1px solid rgba(229, 206, 176, 0.2);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.partners-note__badge {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  background: #e5ceb0;
+  color: #140d09;
+  padding: 4px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.partners-note__text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.76rem;
+  line-height: 1.6;
+  color: rgba(250, 247, 242, 0.85);
+  margin: 0;
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .partners-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .partners-header__right {
+    padding-left: 0;
+    border-left: none;
+    border-top: 1px solid rgba(229, 206, 176, 0.3);
+    padding-top: 20px;
+  }
+  .partners-grid {
+    grid-template-columns: 1fr;
+  }
+}
