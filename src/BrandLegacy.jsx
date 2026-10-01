@@ -54,12 +54,10 @@ export default function BrandLegacy() {
     <section id="legacy" className="brand-legacy" ref={root} aria-label="Marvelous legacy and franchise expansion">
       <div className="legacy-stage">
         <header className="legacy-header">
-          <span>THE MARVELOUS STORY</span>
           <p>
             Founded 1998.<br />
             <em>25+ Years of Trusted Expertise.</em>
           </p>
-          <span>HERITAGE / FRANCHISE VISION</span>
         </header>
         <div className="legacy-scenes">
           {chapters.map(([number, label, title, copy], index) => (
@@ -75,9 +73,6 @@ export default function BrandLegacy() {
                       alt="National Bollywood Film & Season Awards Gala: Gulshan Grover, Sana Khan, Mahima Chaudhary, Bhavna Pahwa, Simran Kaur"
                       className="legacy-icons-img"
                     />
-                    <div className="legacy-icons-stage-badge">
-                      <span>NATIONAL HONORS GALA</span>
-                    </div>
                     <span className="legacy-icons-caption">
                       Gulshan Grover · Sana Khan · Mahima Chaudhary · Bhavna Pahwa · Simran Kaur
                     </span>
@@ -114,16 +109,11 @@ export default function BrandLegacy() {
                   </a>
                 )}
               </div>
-              <span className="legacy-edition" aria-hidden="true">
-                0{index + 1} / 05
-              </span>
             </article>
           ))}
         </div>
         <footer className="legacy-footer">
-          <span>1998 FOUNDING</span>
           <div className="legacy-track"><i /></div>
-          <span>NATIONWIDE EXPANSION</span>
         </footer>
 
         {/* Celebrity Client Bar with authentic avatars */}

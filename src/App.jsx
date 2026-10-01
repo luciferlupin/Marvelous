@@ -925,7 +925,6 @@ export function App() {
                 />
               ))}
               <div className="studio-visual__caption">
-                <span>MARVELOUS METHOD</span>
                 <strong>{selectedStudioMode.label}</strong>
               </div>
             </div>
@@ -983,7 +982,6 @@ export function App() {
         <div className="codes-sticky">
           <header className="codes-header">
             <div>
-              <span>THE HOUSE CODES · 01—04</span>
               <h2 id="codes-title">Luxury lives in the details.</h2>
             </div>
             <p>Scroll to move through the visual language behind every Marvelous result.</p>
@@ -1040,7 +1038,6 @@ export function App() {
       <section id="chapters" className="chapters-section" aria-labelledby="chapters-title">
         <div className="chapters-sticky">
           <div className="chapters-heading">
-            <span>ONE APPOINTMENT · THREE ACTS</span>
             <h2 id="chapters-title">Your transformation, choreographed.</h2>
           </div>
 
@@ -1093,7 +1090,6 @@ export function App() {
               <h2 className="editorial-title">Two disciplines.<br />One remarkable standard.</h2>
             </div>
             <div className="leadership-header__note">
-              <span className="leadership-header__edition">ASHOK VIHAR · NEW DELHI</span>
               <p className="leadership-header-desc">
                 Enterprise vision and award-winning artistry meet in one shared pursuit:
                 making every Marvelous experience impossible to forget.
@@ -1101,16 +1097,9 @@ export function App() {
             </div>
           </header>
 
-          <div className="leadership-manifesto" aria-hidden="true">
-            <span>VISION</span>
-            <span className="leadership-manifesto__mark">×</span>
-            <span>ARTISTRY</span>
-          </div>
-
           <div className="founder-grid">
             {/* Co-Founder 1: Hridhan Pahwa */}
             <article id="founder-hridhan" className="founder-card">
-              <span className="founder-card__edition" aria-hidden="true">01 · THE ARCHITECT</span>
               <div className="founder-card__media">
                 <img
                   src="/assets/hridhan-pahwa.jpg"
@@ -1144,7 +1133,6 @@ export function App() {
 
             {/* Founder 2: Ashna Pahwa */}
             <article id="founder-ashna" className="founder-card">
-              <span className="founder-card__edition" aria-hidden="true">02 · THE ARTIST</span>
               <div className="founder-card__media">
                 <img
                   src="/assets/ashna-pahwa.jpg"

@@ -326,9 +326,6 @@ export default function FranchiseSection() {
             </div>
 
             <div className="pillar-display" role="tabpanel">
-              <span className="pillar-display__watermark" aria-hidden="true">
-                {PILLARS[activePillar].number}
-              </span>
               <div className="pillar-display__header">
                 <div className="pillar-display__badge-row">
                   <span className="pillar-display__badge">
@@ -376,9 +373,6 @@ export default function FranchiseSection() {
                 </div>
                 <h4 className="why-card__title">{item.title}</h4>
                 <p className="why-card__desc">{item.desc}</p>
-                <div className="why-card__footer">
-                  <span className="why-card__stat-label">{item.statLabel}</span>
-                </div>
               </div>
             ))}
           </div>

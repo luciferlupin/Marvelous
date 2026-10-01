@@ -42,12 +42,10 @@ export default function EditorialStories() {
   }, []);
   return <div className="editorial-stories" ref={root}>
     <section id="lookbook" className="lookbook-story" data-story-motion aria-labelledby="lookbook-heading">
-      <header className="story-heading"><span className="story-kicker">THE MARVELOUS EDIT / AN EXPLORATION</span><h2 id="lookbook-heading">Good hair.<br /><em>Extraordinary feeling.</em></h2><p>A study in texture, tone and the details that make a look your own.</p></header>
+      <header className="story-heading"><span className="story-kicker">THE MARVELOUS EDIT</span><h2 id="lookbook-heading">Good hair.<br /><em>Extraordinary feeling.</em></h2><p>A study in texture, tone and the details that make a look your own.</p></header>
       <div className="lookbook-layout">
         <div className="lookbook-image-stage">
           {looks.map((look, index) => <img key={look.image} className={selected === index ? "look-image is-selected" : "look-image"} src={`/assets/${look.image}`} alt={selected === index ? look.alt : ""} aria-hidden={selected !== index} loading="lazy" />)}
-          <span className="lookbook-image-note">THE ART OF FEELING LIKE YOURSELF</span>
-          <span className="lookbook-counter">0{selected + 1}<small>/ 03</small></span>
         </div>
         <div className="lookbook-copy">
           <div className="lookbook-selector" aria-label="Explore salon looks">{looks.map((look, index) => <button type="button" key={look.name} aria-pressed={selected === index} onClick={() => setSelected(index)}><span>0{index + 1}</span>{look.name}<span aria-hidden="true">↗</span></button>)}</div>
@@ -61,13 +59,11 @@ export default function EditorialStories() {
       <div className="bridal-sticky">
         <div className="bridal-photo"><img src="/assets/gallery-bridal.jpg" alt="Elegant bridal hair with woven texture and gold floral pins" loading="lazy" /></div>
         <div className="bridal-copy"><span className="story-kicker">THE OCCASION ATELIER</span><h2 id="bridal-heading">For the moments<br />you keep <em>forever.</em></h2><p>Your dress. Your light. Your way of moving.<br />A complete beauty story, composed around you.</p><a href="#booking" className="story-link">Plan your bridal consultation <span aria-hidden="true">↗</span></a></div>
-        <div className="bridal-details"><span>01 / THE CONVERSATION</span><span>02 / THE CREATIVE DIRECTION</span><span>03 / YOUR MOMENT</span></div>
-        <span className="bridal-side-note" aria-hidden="true">PERSONAL BY DESIGN</span>
       </div>
     </section>
 
     <section id="care-notes" className="care-story" data-story-motion aria-labelledby="care-heading">
-      <div className="care-art"><img src="/assets/gallery-trichology.jpg" alt="Precise scalp care with a golden oil dropper" loading="lazy" /><div className="care-art-label"><span>THE QUIETER RITUAL</span><p>A little attention.<br />A lasting feeling.</p></div><img className="care-art-inset" src="/assets/marvelous-follicle-botanical-2d.png" alt="Botanical illustration inspired by hair and scalp care" loading="lazy" /></div>
+      <div className="care-art"><img src="/assets/gallery-trichology.jpg" alt="Precise scalp care with a golden oil dropper" loading="lazy" /><img className="care-art-inset" src="/assets/marvelous-follicle-botanical-2d.png" alt="Botanical illustration inspired by hair and scalp care" loading="lazy" /></div>
       <div className="care-copy"><span className="story-kicker">NOTES FROM THE ATELIER</span><h2 id="care-heading">Beautiful care.<br /><em>Beyond the chair.</em></h2><p className="care-intro">The experience begins before you arrive and continues long after you leave.</p><div className="care-accordion">{care.map(([label, title, copy], index) => <div className={`care-item ${opened === index ? "is-open" : ""}`} key={label}><h3><button aria-expanded={opened === index} aria-controls={`care-answer-${index}`} onClick={() => setOpened(opened === index ? -1 : index)} type="button"><span>0{index + 1}</span>{label}<span className="care-plus" aria-hidden="true">+</span></button></h3><div id={`care-answer-${index}`} className="care-answer" inert={opened !== index ? true : undefined}><div><h4>{title}</h4><p>{copy}</p></div></div></div>)}</div><a className="story-link" href="#studio">Find your starting point <span aria-hidden="true">↗</span></a></div>
     </section>
   </div>;

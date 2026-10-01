@@ -36,7 +36,7 @@ useEffect(() => {
 return (
   <div className="roadmap-scroll" ref={roadmap} id="destinations">
     <section className="expansion">
-      <span className="exp-kicker">THE MARVELOUS ROADMAP / OUR GROWING WORLD</span>
+      <span className="exp-kicker">OUR GROWING WORLD</span>
       <h2>New addresses.<br /><em>One unmistakable feeling.</em></h2>
       <p className="exp-intro">Rooted in Ashok Vihar. Arriving in Model Town.<br />And already imagining what comes next.</p>
       <div className="exp-rail">
@@ -46,29 +46,15 @@ return (
             <span className="exp-dot" aria-hidden="true" />
             <small>{p[1]}</small>
             <strong>{p[0]}</strong>
-            <span className="exp-explore">Explore this chapter ↗</span>
           </button>
         ))}
       </div>
       <div className="exp-detail" key={active} aria-live="polite">
         <div>
-          <span className="exp-kicker">CHAPTER 0{active + 1} / {places[active][1]}</span>
+          <span className="exp-kicker">{places[active][1]}</span>
           <h3>{places[active][0]}</h3>
           <p>{places[active][2]}</p>
         </div>
-        <div className="exp-stamp">
-          {places[active][3]}
-          <small>{active === 1 ? 'THE NEXT OPENING' : 'MARVELOUS SALON'}</small>
-        </div>
-      </div>
-      <div className="exp-footer">
-        <span>01 OPEN</span>
-        <span>01 OPENING THIS SEPTEMBER</span>
-        <span>02 COMING SOON</span>
-      </div>
-      <div className="roadmap-meter" aria-hidden="true">
-        <span>THE JOURNEY CONTINUES</span>
-        <i />
       </div>
     </section>
   </div>
