@@ -1196,15 +1196,17 @@ export function App() {
       <BrandPartners />
       <FranchiseSection />
       <ArtGallery />
-      <section id="ashok-vihar" className="local-research-section" style={{padding:"90px 6vw",background:"#f3ede7",color:"#35261c"}}>
-        <span style={{fontSize:10,letterSpacing:".18em"}}>ASHOK VIHAR / NEW DELHI</span>
-        <h2 style={{fontSize:"clamp(36px,5vw,68px)",fontWeight:300,letterSpacing:"-.05em"}}>Your neighbourhood.<br/>A world of beauty.</h2>
-        <p style={{maxWidth:640,lineHeight:1.9}}>Haircuts, colour, styling and hair spa. Bridal, party and groom makeup. Nail care, facials and grooming for women and men—bring your plans, and discuss a personalised service with the salon.</p>
-        <h3 style={{fontSize:30,fontWeight:300,marginTop:45}}>Marvelous Salon Academy</h3>
-        <p style={{maxWidth:640,lineHeight:1.9}}>Explore professional training in hair design, advanced makeup artistry, clinical skin therapy and nail couture. Contact the academy for current diploma syllabi, practical clinics, fees and the next intake.</p>
-        <div style={{display:"flex",flexWrap:"wrap",gap:28,marginTop:30,fontSize:12}}>
-          <a href="https://share.google/HPsdlqEjNmCPmcgkR" target="_blank" rel="noreferrer" style={{color:"inherit"}}>Find the salon on Google Maps ↗</a>
-          <a href="https://www.justdial.com/Delhi/Marvelous-Beauty-Hair-Make-Up-Studio-Above-Bengali-Sweets-Deep-Market-Ashok-Vihar/011PXX11-XX11-130429104034-Y8Y6_BZDET/photos" target="_blank" rel="noreferrer" style={{color:"inherit"}}>Browse the public salon photo gallery ↗</a>
+      <section id="ashok-vihar" className="local-research-section" style={{padding:"clamp(64px, 8vw, 96px) clamp(20px, 4vw, 56px)",background:"#f3ede7",color:"#35261c"}}>
+        <div className="editorial-container">
+          <span style={{display:"block",fontSize:10,fontWeight:650,letterSpacing:".22em",color:"#765942",marginBottom:14}}>ASHOK VIHAR / NEW DELHI</span>
+          <h2 style={{fontSize:"clamp(32px, 5vw, 62px)",fontWeight:300,letterSpacing:"-.045em",lineHeight:1.06,margin:"0 0 20px"}}>Your neighbourhood.<br/>A world of beauty.</h2>
+          <p style={{maxWidth:640,lineHeight:1.8,fontSize:"clamp(0.88rem, 1.15vw, 1rem)",color:"#604a3a",margin:"0 0 32px"}}>Haircuts, colour, styling and hair spa. Bridal, party and groom makeup. Nail care, facials and grooming for women and men—bring your plans, and discuss a personalised service with the salon.</p>
+          <h3 style={{fontSize:"clamp(22px, 3vw, 28px)",fontWeight:350,letterSpacing:"-.02em",margin:"36px 0 12px",color:"#2c1a0e"}}>Marvelous Salon Academy</h3>
+          <p style={{maxWidth:640,lineHeight:1.8,fontSize:"clamp(0.88rem, 1.15vw, 1rem)",color:"#604a3a",margin:"0 0 28px"}}>Explore professional training in hair design, advanced makeup artistry, clinical skin therapy and nail couture. Contact the academy for current diploma syllabi, practical clinics, fees and the next intake.</p>
+          <div style={{display:"flex",flexWrap:"wrap",gap:20,marginTop:24,fontSize:12}}>
+            <a href="https://share.google/HPsdlqEjNmCPmcgkR" target="_blank" rel="noreferrer" style={{display:"inline-flex",alignItems:"center",gap:6,padding:"8px 16px",background:"rgba(118, 89, 66, 0.1)",border:"1px solid rgba(118, 89, 66, 0.25)",borderRadius:9999,color:"#2c1a0e",textDecoration:"none",fontWeight:600}}>Find the salon on Google Maps ↗</a>
+            <a href="https://www.justdial.com/Delhi/Marvelous-Beauty-Hair-Make-Up-Studio-Above-Bengali-Sweets-Deep-Market-Ashok-Vihar/011PXX11-XX11-130429104034-Y8Y6_BZDET/photos" target="_blank" rel="noreferrer" style={{display:"inline-flex",alignItems:"center",gap:6,padding:"8px 16px",background:"rgba(118, 89, 66, 0.1)",border:"1px solid rgba(118, 89, 66, 0.25)",borderRadius:9999,color:"#2c1a0e",textDecoration:"none",fontWeight:600}}>Browse public salon gallery ↗</a>
+          </div>
         </div>
       </section>
 

@@ -113,19 +113,13 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
   - Elevated `BEAUTY BEYOND ORDINARY` to `font-weight: 600` with radiant gold contrast (`#fdf0dc`).
   - Solidified secondary CTA (`EXPLORE SERVICES →`) with frosted obsidian glass backdrop (`rgba(18, 11, 7, 0.75)`), champagne gold border (`1.5px`), and white typography.
   - Enhanced top navigation links, logo sub-mark, and scroll cue with crisp text shadows and typography weights.
-- **Apple-Style Living Art Gallery (`#gallery`)**:
-  - **Visual Primacy & Zero Clutter**: Pure photograph-first Apple presentation with zero boilerplate copy, no redundant multi-sentence text blocks, and no repetitive artist tags.
-  - **Curated High-Resolution Catalog**: Curated dataset of 30 magazine-grade archival assets across 6 categories (`bridal`, `pageant`, `celebrity`, `hair`, `academy`, `sanctuary`), filtering out low-resolution and redundant shots.
-  - **Header & Filter Bar**:
-    - Clean eyebrow `THE ARCHIVE` with minimalist headline `Thirty Years in Light & Form.` and single-line summary.
-    - Segmented Apple-style frosted pill bar with silky active state (`All Works`, `Bridal Couture`, `Pageants`, `Celebrity`, `Coiffure`, `Academy`, `Atelier`) and touch-scroll track, omitting noisy counter badges.
-  - **Apple Bento Grid Layout**:
-    - Imagery occupies 100% of the card area with 20px rounded corners, hairline champagne borders, and deep obsidian shadows.
-    - Card surfaces are completely uncluttered—no corner badges covering faces or hair.
-    - Minimal floating frosted bottom caption surfaces title, subtitle, and year cleanly over a subtle vignette scrim.
-  - **Cinema Lightbox Modal via `createPortal`**:
-    - Mounts directly into `document.body` via React portal, completely escaping any ancestor stacking contexts.
-    - High-resolution photograph occupies 85%+ of the viewport with zero blur.
-    - Floating frosted capsule counter (`01 / 30`), minimalist circular `✕` close button, frosted circular chevrons (`‹`, `›`), and floating bottom capsule with title, metadata, and `Book Experience ↗` action.
-    - Full keyboard (`Escape`, `ArrowLeft`, `ArrowRight`) and mobile touch-swipe gesture support.
+- **Apple-Style Living Art Gallery (`#gallery`) & Big-Brand UX Optimization**:
+  - **Zero Scroll Fatigue Architecture**: Eliminates the vertical scroll bloat of 30 stacked items by defaulting to a curated 6-card bento grid (1 primary featured hero + 5 editorial tiles) that fits within 1–1.5 viewports.
+  - **Dual Layout Switcher (Grid vs Reel)**:
+    - **Curated Bento Grid**: Shows 6 initial curated pieces with an Apple-style progressive disclosure drawer trigger (`Explore All 30 Curated Works ↓` / `Collapse Archive ↑`).
+    - **Horizontal Apple Filmstrip Reel**: Switches to a sleek single-row horizontal swipe carousel with smooth snap-scrolling, touch/drag physics, interactive frosted champagne arrow chevrons, and live progress bar, keeping page height strictly compact.
+  - **Live Category Count Pills**: Category pills display real-time counters (`All Works · 30`, `Bridal Couture · 6`, `Pageants · 6`, `Celebrity · 6`, `Coiffure · 4`, `Academy · 5`, `Atelier · 4`).
+  - **Interactive Hover & Cinema Access**: Cards feature sleek "View Cinema ↗" hover badges that launch the zero-blur cinema lightbox modal with keyboard, swipe, and direct concierge booking integration.
+  - **Preserved Luxury Identity**: Strict adherence to the warm ivory, obsidian espresso `#0d0705`, bronze `#2c1a0e`, and champagne gold `#e5ceb0` palette with zero alterations to neighboring sections.
+
 

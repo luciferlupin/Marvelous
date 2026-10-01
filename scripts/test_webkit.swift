@@ -53,7 +53,8 @@ class WebDelegate: NSObject, WKNavigationDelegate, WKScriptMessageHandler {
         wv.navigationDelegate = self
         self.webView = wv
         
-        let url = URL(string: "http://localhost:5180/?phase=complete")!
+        let targetUrlStr = CommandLine.arguments.count > 5 ? CommandLine.arguments[5] : "http://localhost:5173/?phase=complete#gallery"
+        let url = URL(string: targetUrlStr)!
         wv.load(URLRequest(url: url))
     }
     
