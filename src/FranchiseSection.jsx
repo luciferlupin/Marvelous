@@ -46,71 +46,128 @@ const PILLARS = [
   {
     number: "01",
     name: "Operations",
-    tagline: "Turnkey Salon Orchestration",
+    subtitle: "Turnkey Salon Orchestration",
     points: [
-      "Standard Operating Procedures (SOPs) for every client touchpoint",
-      "Optimized daily salon workflows and inventory management",
-      "Rigorous quality audits and global hygiene protocols",
+      {
+        title: "Comprehensive Standard Operating Procedures (SOPs)",
+        desc: "Exhaustive step-by-step service manuals covering client intake, consultation protocols, and treatment delivery.",
+      },
+      {
+        title: "Optimized Daily Workflows & Inventory Control",
+        desc: "Real-time stock governance, automated re-ordering, and wastage minimization for maximum gross margin.",
+      },
+      {
+        title: "Rigorous Quality Audits & Global Hygiene",
+        desc: "Quarterly mystery audits, international sterilization standards, and verified client satisfaction indices.",
+      },
     ],
   },
   {
     number: "02",
     name: "Marketing",
-    tagline: "High-Visibility Customer Acquisition",
+    subtitle: "High-Visibility Customer Acquisition",
     points: [
-      "Omnichannel grand opening campaigns & local PR buzz",
-      "Hyper-targeted digital ads, social media creatives & SEO",
-      "Celebrity and regional beauty influencer collaborations",
+      {
+        title: "Omnichannel Launch Campaigns & Local PR",
+        desc: "Curated grand opening buzz, press coverage, and VIP invitation evenings in prime regional catchments.",
+      },
+      {
+        title: "Hyper-Targeted Digital Advertising & Social Creatives",
+        desc: "Continuous performance marketing, localized SEO, and high-conversion aesthetic Instagram campaigns.",
+      },
+      {
+        title: "Celebrity & Regional Beauty Influencer Alliances",
+        desc: "National PR backing, bridal trade shows, and brand-building activations driven by central leadership.",
+      },
     ],
   },
   {
     number: "03",
     name: "Hiring & Training",
-    tagline: "Master-Grade Talent Pipeline",
+    subtitle: "Master-Grade Talent Pipeline",
     points: [
-      "Complete recruitment support for master stylists and colorists",
-      "Continuous technical training through Marvelous Salon Academy",
-      "Soft-skills, luxury hospitality etiquette, and consultation mastery",
+      {
+        title: "End-to-End Senior Stylist & Colorist Recruitment",
+        desc: "Screening, practical trade testing, and placement of experienced salon professionals.",
+      },
+      {
+        title: "Continuous Marvelous Salon Academy Certification",
+        desc: "Mandatory seasonal masterclasses in balayage chemistry, bridal couture, and trichological diagnostics.",
+      },
+      {
+        title: "Luxury Hospitality & Consultation Etiquette",
+        desc: "Elevated guest relations training ensuring every client experiences world-class white-glove service.",
+      },
     ],
   },
   {
     number: "04",
     name: "Sales Framework",
-    tagline: "Maximizing Lifetime Client Value",
+    subtitle: "Maximizing Lifetime Client Value",
     points: [
-      "High-retention annual membership & bridal package architectures",
-      "Service upsell and bespoke trichology recommendation systems",
-      "Tiered loyalty programs driving recurring monthly appointments",
+      {
+        title: "High-Retention Annual Membership Architectures",
+        desc: "Predictable recurring monthly revenue through structured annual grooming and hair care subscriptions.",
+      },
+      {
+        title: "Bespoke Bridal & Occasion Transformations",
+        desc: "High-ticket bridal party packages, pre-wedding rituals, and seasonal event pricing systems.",
+      },
+      {
+        title: "Curated Retail Upsell & Prescription Programs",
+        desc: "Personalized take-home trichology regimens generating 18–25% incremental retail margins.",
+      },
     ],
   },
   {
     number: "05",
     name: "Technology",
-    tagline: "Intelligent Real-Time Governance",
+    subtitle: "Intelligent Real-Time Governance",
     points: [
-      "Enterprise Cloud CRM for client history and personalized formulas",
-      "Automated billing, inventory reordering, and GST compliance",
-      "Real-time analytics dashboard for revenue, margins, and chair occupancy",
+      {
+        title: "Enterprise Cloud CRM & Client Formula Vault",
+        desc: "Digitized client color histories, scalp health records, and preferences synchronized across branches.",
+      },
+      {
+        title: "Automated Billing, Staff Payouts & Compliance",
+        desc: "Frictionless POS, automated stylist commissions, dynamic booking calendars, and full GST automation.",
+      },
+      {
+        title: "Executive Analytics Dashboard",
+        desc: "Real-time visibility into chair occupancy, revenue per hour, client return rates, and outlet profitability.",
+      },
     ],
   },
 ];
 
 const WHY_INVEST = [
   {
-    title: "Repeat Customers = Steady Income",
-    desc: "Clients visit salons every 3 to 6 weeks for cuts, maintenance color, and care. Annual memberships and curated packages create predictable monthly cash flows.",
+    number: "01",
+    title: "Repeat Customers & Predictable Cash Flow",
+    desc: "Clients visit salons every 3 to 6 weeks for cuts, maintenance color, and care. Annual memberships and curated packages create recurring, predictable revenue.",
+    stat: "Every 3–6 Weeks",
+    statLabel: "Average Client Visit Frequency",
   },
   {
-    title: "People Never Stop Grooming",
-    desc: "Haircuts, gray coverage, balayage, and clinical skincare are essential personal needs that remain resilient across all economic cycles.",
+    number: "02",
+    title: "Essential & Non-Cyclical Demand",
+    desc: "Haircuts, gray coverage, balayage, and clinical skincare are essential personal grooming needs that remain completely resilient across all economic cycles.",
+    stat: "365 Days",
+    statLabel: "Year-Round Consumer Essential",
   },
   {
-    title: "Business That Runs All Year",
-    desc: "Indian bridal seasons, festive celebrations (Diwali, Karwa Chauth), corporate galas, and daily grooming generate consistent, year-round revenue.",
+    number: "03",
+    title: "Multi-Season High-Ticket Spikes",
+    desc: "Indian wedding seasons, festive celebrations (Diwali, Karwa Chauth), corporate galas, and pre-bridal transformations generate immense revenue surges.",
+    stat: "High Margin",
+    statLabel: "Bridal & Festive Spikes",
   },
   {
-    title: "Shift Towards Branded Salons",
-    desc: "Consumers are rapidly departing unorganized local shops in favor of hygienic, certified, professionally trained salon brands with transparent standards.",
+    number: "04",
+    title: "Secular Shift to Branded Luxury",
+    desc: "Consumers are rapidly departing unorganized local shops in favor of hygienic, certified, professionally trained luxury salon brands with transparent standards.",
+    stat: "25+ Years",
+    statLabel: "Established Brand Trust",
   },
 ];
 
@@ -139,12 +196,14 @@ export default function FranchiseSection() {
 
   return (
     <section id="franchise" className="franchise-section" aria-labelledby="franchise-title">
+      <div className="franchise-ambient-glow" aria-hidden="true" />
       <div className="editorial-container">
         {/* Header */}
         <header className="franchise-header">
-          <span className="editorial-eyebrow">FRANCHISE & PARTNERSHIP EXPANSION</span>
-          <h2 id="franchise-title" className="editorial-title">
-            Own A Chapter In India’s<br />Next Luxury Salon Legacy.
+          <span className="franchise-eyebrow">FRANCHISE & PARTNERSHIP EXPANSION</span>
+          <h2 id="franchise-title" className="franchise-title">
+            Own A Chapter In India’s<br />
+            <span className="franchise-title__accent">Next Luxury Salon Legacy.</span>
           </h2>
           <p className="franchise-lead">
             Backed by 25+ years of operational excellence, world-class brand alliances, and a proven high-ROI framework. Partner with Marvelous Salon & Academy to build an enduring, profitable salon enterprise.
@@ -161,8 +220,11 @@ export default function FranchiseSection() {
         {/* Section 1: Formats Comparison */}
         <div className="franchise-formats-block">
           <div className="franchise-block-head">
-            <span className="franchise-subhead">CHOOSE YOUR GROWTH MODEL</span>
+            <span className="franchise-subhead">CHOOSE YOUR INVESTMENT MODEL</span>
             <h3 className="franchise-formats-title">Two Scalable Franchise Formats</h3>
+            <p className="franchise-formats-desc">
+              Tailored investment models engineered for prime flagship catchments or compact high-efficiency retail footfalls.
+            </p>
           </div>
 
           <div className="franchise-cards-grid">
@@ -174,36 +236,40 @@ export default function FranchiseSection() {
                 }`}
                 onClick={() => setSelectedFormat(fmt.id)}
               >
-                <div className="format-card__badge">{fmt.badge}</div>
-                <h4 className="format-card__name">{fmt.title}</h4>
-                <p className="format-card__sub">{fmt.subtitle}</p>
+                <div className="format-card__sheen" aria-hidden="true" />
+                <div className="format-card__top">
+                  <span className="format-card__badge">{fmt.badge}</span>
+                  <h4 className="format-card__name">{fmt.title}</h4>
+                  <p className="format-card__sub">{fmt.subtitle}</p>
+                </div>
 
-                <div className="format-card__stats">
-                  <div className="format-stat">
-                    <span className="format-stat__label">Total Investment</span>
-                    <span className="format-stat__value">{fmt.investment}</span>
+                <div className="format-card__stats-grid">
+                  <div className="format-stat-box">
+                    <span className="format-stat-box__label">TOTAL INVESTMENT</span>
+                    <strong className="format-stat-box__value">{fmt.investment}</strong>
                   </div>
-                  <div className="format-stat">
-                    <span className="format-stat__label">Required Area</span>
-                    <span className="format-stat__value">{fmt.area}</span>
+                  <div className="format-stat-box">
+                    <span className="format-stat-box__label">REQUIRED AREA</span>
+                    <strong className="format-stat-box__value">{fmt.area}</strong>
                   </div>
-                  <div className="format-stat">
-                    <span className="format-stat__label">Franchise Fee</span>
-                    <span className="format-stat__value">{fmt.fee}</span>
+                  <div className="format-stat-box">
+                    <span className="format-stat-box__label">FRANCHISE FEE</span>
+                    <strong className="format-stat-box__value">{fmt.fee}</strong>
                   </div>
-                  <div className="format-stat">
-                    <span className="format-stat__label">Royalty</span>
-                    <span className="format-stat__value">{fmt.royalty}</span>
+                  <div className="format-stat-box">
+                    <span className="format-stat-box__label">ROYALTY</span>
+                    <strong className="format-stat-box__value">{fmt.royalty}</strong>
                   </div>
                 </div>
 
                 <div className="format-card__ideal">
-                  <strong>Ideal Location:</strong> {fmt.idealFor}
+                  <span className="format-card__ideal-label">PRIME CATCHMENTS</span>
+                  <p className="format-card__ideal-text">{fmt.idealFor}</p>
                 </div>
 
                 <ul className="format-card__features">
                   {fmt.features.map((feat, idx) => (
-                    <li key={idx}>
+                    <li key={idx} className="format-feature-item">
                       <span className="format-feature-bullet">✦</span>
                       <span>{feat}</span>
                     </li>
@@ -224,7 +290,8 @@ export default function FranchiseSection() {
                       setIsModalOpen(true);
                     }}
                   >
-                    Enquire for {fmt.title} →
+                    <span>Enquire For {fmt.title}</span>
+                    <span className="format-card__btn-arrow">→</span>
                   </button>
                 </div>
               </article>
@@ -259,25 +326,31 @@ export default function FranchiseSection() {
             </div>
 
             <div className="pillar-display" role="tabpanel">
+              <span className="pillar-display__watermark" aria-hidden="true">
+                {PILLARS[activePillar].number}
+              </span>
               <div className="pillar-display__header">
-                <span className="pillar-display__badge">
-                  PILLAR {PILLARS[activePillar].number}
-                </span>
+                <div className="pillar-display__badge-row">
+                  <span className="pillar-display__badge">
+                    PILLAR {PILLARS[activePillar].number} · {PILLARS[activePillar].name.toUpperCase()}
+                  </span>
+                </div>
                 <h4 className="pillar-display__title">
-                  {PILLARS[activePillar].name}
+                  {PILLARS[activePillar].subtitle}
                 </h4>
-                <p className="pillar-display__tagline">
-                  {PILLARS[activePillar].tagline}
-                </p>
               </div>
-              <ul className="pillar-display__list">
+
+              <div className="pillar-display__points-grid">
                 {PILLARS[activePillar].points.map((pt, i) => (
-                  <li key={i} className="pillar-point-item">
-                    <span className="pillar-point-icon">✓</span>
-                    <span>{pt}</span>
-                  </li>
+                  <div key={i} className="pillar-point-card">
+                    <div className="pillar-point-card__header">
+                      <span className="pillar-point-icon">✦</span>
+                      <h5 className="pillar-point-card__title">{pt.title}</h5>
+                    </div>
+                    <p className="pillar-point-card__desc">{pt.desc}</p>
+                  </div>
                 ))}
-              </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -285,19 +358,27 @@ export default function FranchiseSection() {
         {/* Section 3: Why Invest in Beauty */}
         <div className="franchise-why-block">
           <div className="franchise-block-head">
-            <span className="franchise-subhead">THE BUSINESS CASE</span>
-            <h3 className="franchise-formats-title">Why Invest In The Beauty & Salon Industry</h3>
+            <span className="franchise-subhead">THE INVESTMENT CASE</span>
+            <h3 className="franchise-formats-title">Why Invest In The Luxury Salon Industry</h3>
             <p className="franchise-why-lead">
-              “What we handle, so you can focus on growth.”
+              “Essential luxury, non-cyclical demand, and 365-day recurring cash flows.”
             </p>
           </div>
 
           <div className="why-grid">
             {WHY_INVEST.map((item, idx) => (
               <div className="why-card" key={idx}>
-                <span className="why-card__num">0{idx + 1}</span>
+                <div className="why-card__top">
+                  <span className="why-card__num">{item.number}</span>
+                  <div className="why-card__stat-chip">
+                    <span>{item.stat}</span>
+                  </div>
+                </div>
                 <h4 className="why-card__title">{item.title}</h4>
                 <p className="why-card__desc">{item.desc}</p>
+                <div className="why-card__footer">
+                  <span className="why-card__stat-label">{item.statLabel}</span>
+                </div>
               </div>
             ))}
           </div>
@@ -306,17 +387,19 @@ export default function FranchiseSection() {
         {/* Banner CTA */}
         <div className="franchise-cta-banner">
           <div className="franchise-cta-content">
-            <span className="editorial-eyebrow">CONFIDENTIAL OPPORTUNITIES</span>
-            <h3>Ready To Build With Marvelous?</h3>
-            <p>
-              Speak directly with our expansion leadership. Contact us via our official desk lines or prepare your confidential enquiry.
+            <span className="franchise-cta-eyebrow">CONFIDENTIAL OPPORTUNITIES</span>
+            <h3 className="franchise-cta-title">Ready To Build With Marvelous?</h3>
+            <p className="franchise-cta-desc">
+              Speak directly with our expansion leadership. Contact us via our official desk lines or prepare your confidential franchise application.
             </p>
             <div className="franchise-cta-contacts">
               <a href="tel:+919891110587" className="franchise-phone-link">
-                📞 +91 9891110587
+                <span>📞</span>
+                <strong>+91 9891110587</strong>
               </a>
               <a href="tel:+918929121284" className="franchise-phone-link">
-                📞 +91 8929121284
+                <span>📞</span>
+                <strong>+91 8929121284</strong>
               </a>
               <a
                 href="https://instagram.com/Marvelous_Salon_Academy"
@@ -324,7 +407,8 @@ export default function FranchiseSection() {
                 rel="noreferrer"
                 className="franchise-phone-link"
               >
-                📸 @Marvelous_Salon_Academy
+                <span>📸</span>
+                <strong>@Marvelous_Salon_Academy</strong>
               </a>
             </div>
           </div>
@@ -333,7 +417,8 @@ export default function FranchiseSection() {
             className="hero__cta-primary franchise-btn-large"
             onClick={() => setIsModalOpen(true)}
           >
-            Submit Franchise Enquiry →
+            <span>Submit Franchise Enquiry</span>
+            <span>→</span>
           </button>
         </div>
       </div>
@@ -359,108 +444,112 @@ export default function FranchiseSection() {
 
             {!submitted ? (
               <>
-                <span className="editorial-eyebrow">DIRECT INVESTOR ENQUIRY</span>
-                <h3 id="modal-title" className="franchise-modal-title">
-                  Partner With Marvelous
-                </h3>
-                <p className="franchise-modal-sub">
-                  Fill in your details below to stage your franchise application with our expansion leadership.
-                </p>
+                <div className="franchise-modal-header">
+                  <span className="franchise-modal-eyebrow">OFFICIAL EXPANSION DESK</span>
+                  <h3 id="modal-title" className="franchise-modal-title">
+                    Franchise Enquiry Preparation
+                  </h3>
+                  <p className="franchise-modal-sub">
+                    Please prepare your profile details. Our franchise director will review your catchment and connect within 24 hours.
+                  </p>
+                </div>
 
-                <form onSubmit={handleSubmit} className="franchise-form">
-                  <div className="form-group">
-                    <label htmlFor="franchise-name">Full Name *</label>
-                    <input
-                      id="franchise-name"
-                      type="text"
-                      required
-                      placeholder="e.g. Rajesh Malhotra"
-                      value={formData.name}
-                      onChange={(e) =>
-                        setFormData({ ...formData, name: e.target.value })
-                      }
-                    />
-                  </div>
-
+                <form className="franchise-form" onSubmit={handleSubmit}>
                   <div className="form-row">
+                    <div className="form-group">
+                      <label htmlFor="franchise-name">Full Name *</label>
+                      <input
+                        id="franchise-name"
+                        type="text"
+                        required
+                        placeholder="e.g. Rohini Sharma"
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      />
+                    </div>
                     <div className="form-group">
                       <label htmlFor="franchise-phone">Phone / WhatsApp *</label>
                       <input
                         id="franchise-phone"
                         type="tel"
                         required
-                        placeholder="+91 98..."
+                        placeholder="+91 98765 43210"
                         value={formData.phone}
-                        onChange={(e) =>
-                          setFormData({ ...formData, phone: e.target.value })
-                        }
-                      />
-                    </div>
-                    <div className="form-group">
-                      <label htmlFor="franchise-email">Email Address</label>
-                      <input
-                        id="franchise-email"
-                        type="email"
-                        placeholder="rajesh@example.com"
-                        value={formData.email}
-                        onChange={(e) =>
-                          setFormData({ ...formData, email: e.target.value })
-                        }
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                       />
                     </div>
                   </div>
 
                   <div className="form-row">
                     <div className="form-group">
-                      <label htmlFor="franchise-city">Target City / Location *</label>
+                      <label htmlFor="franchise-email">Email Address</label>
+                      <input
+                        id="franchise-email"
+                        type="email"
+                        placeholder="rohini@example.com"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      />
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="franchise-city">Target City / Locality *</label>
                       <input
                         id="franchise-city"
                         type="text"
                         required
-                        placeholder="e.g. Pitampura, Chandigarh, Jaipur"
+                        placeholder="e.g. South Delhi / Gurgaon / Chandigarh"
                         value={formData.city}
-                        onChange={(e) =>
-                          setFormData({ ...formData, city: e.target.value })
-                        }
+                        onChange={(e) => setFormData({ ...formData, city: e.target.value })}
                       />
                     </div>
+                  </div>
+
+                  <div className="form-row">
                     <div className="form-group">
                       <label htmlFor="franchise-format">Preferred Format</label>
                       <select
                         id="franchise-format"
                         value={formData.format}
-                        onChange={(e) =>
-                          setFormData({ ...formData, format: e.target.value })
-                        }
+                        onChange={(e) => setFormData({ ...formData, format: e.target.value })}
                       >
-                        <option value="Marvelous Salon (Flagship)">
-                          Marvelous Salon — Flagship (₹75L - ₹1Cr)
+                        <option value="Marvelous Salon (Flagship 1,100–4,000 sq ft)">
+                          Marvelous Salon (Flagship: ₹75L – ₹1Cr)
                         </option>
-                        <option value="Marvelous Studio (Compact)">
-                          Marvelous Studio — Compact (₹25L - ₹50L)
+                        <option value="Marvelous Studio (Compact 500–1,100 sq ft)">
+                          Marvelous Studio (Compact: ₹25L – ₹50L)
                         </option>
+                      </select>
+                    </div>
+                    <div className="form-group">
+                      <label htmlFor="franchise-budget">Investment Readiness</label>
+                      <select
+                        id="franchise-budget"
+                        value={formData.budget}
+                        onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
+                      >
+                        <option value="₹25 - ₹50 Lakhs">₹25 – ₹50 Lakhs</option>
+                        <option value="₹50 - ₹75 Lakhs">₹50 – ₹75 Lakhs</option>
+                        <option value="₹75 Lakhs - ₹1 Crore">₹75 Lakhs – ₹1 Crore</option>
+                        <option value="₹1 Crore+ (Multi-Unit / City Master)">₹1 Crore+ (Master Franchise)</option>
                       </select>
                     </div>
                   </div>
 
-                  <div className="franchise-form-notice">
-                    <small>
-                      ℹ Preparation Mode: Direct WhatsApp link and phone contact will be initiated upon review.
-                    </small>
-                  </div>
+                  <p className="franchise-form-notice">
+                    Note: Enquiry preparation is client-side in this release. Submitting will generate a direct priority WhatsApp connection with our expansion desk.
+                  </p>
 
                   <button type="submit" className="hero__cta-primary form-submit-btn">
-                    Confirm & Prepare Application
+                    Generate & Send Confidential Enquiry →
                   </button>
                 </form>
               </>
             ) : (
               <div className="franchise-success">
-                <span className="franchise-success__icon">✓</span>
-                <h3>Application Staged Successfully</h3>
+                <div className="franchise-success__icon">✓</div>
+                <h3>Enquiry Prepared Successfully</h3>
                 <p>
-                  Thank you, <strong>{formData.name}</strong>. Your enquiry for{" "}
-                  <strong>{formData.format}</strong> in <strong>{formData.city}</strong> is prepared.
+                  Thank you, <strong>{formData.name || "Partner"}</strong>. Your enquiry for <strong>{formData.format}</strong> in <strong>{formData.city || "your catchment"}</strong> is ready to transmit directly to our expansion desk.
                 </p>
                 <div className="franchise-success-actions">
                   <a
@@ -468,11 +557,16 @@ export default function FranchiseSection() {
                     target="_blank"
                     rel="noreferrer"
                     className="hero__cta-primary"
+                    style={{ textDecoration: "none", textAlign: "center" }}
                   >
-                    Transmit via WhatsApp 💬
+                    💬 Connect Via WhatsApp Direct (+91 9891110587)
                   </a>
-                  <a href="tel:+919891110587" className="hero__cta-secondary">
-                    Call Desk (+91 9891110587) 📞
+                  <a
+                    href="tel:+918929121284"
+                    className="hero__cta-secondary"
+                    style={{ textDecoration: "none", textAlign: "center" }}
+                  >
+                    📞 Call Alternate Line (+91 8929121284)
                   </a>
                 </div>
                 <button
@@ -483,7 +577,7 @@ export default function FranchiseSection() {
                     setIsModalOpen(false);
                   }}
                 >
-                  Close Window
+                  ← Close & Return
                 </button>
               </div>
             )}

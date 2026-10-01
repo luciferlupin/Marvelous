@@ -95,9 +95,9 @@ const PARTNERS = [
 ];
 
 const CATEGORIES = [
-  { id: "all", label: "All Houses (10)" },
-  { id: "hair", label: "Hair Couture & Trichology (8)" },
-  { id: "skin", label: "Clinical Skincare (2)" },
+  { id: "all", label: "All Houses", count: 10 },
+  { id: "hair", label: "Hair Couture & Trichology", count: 8 },
+  { id: "skin", label: "Clinical Skincare", count: 2 },
 ];
 
 export default function BrandPartners() {
@@ -110,46 +110,61 @@ export default function BrandPartners() {
 
   return (
     <section id="partners" className="brand-partners" aria-labelledby="partners-title">
+      <div className="partners-ambient-glow" aria-hidden="true" />
       <div className="editorial-container">
         {/* Editorial Header */}
         <header className="partners-header">
           <div className="partners-header__left">
-            <span className="editorial-eyebrow">CURATED GLOBAL BRAND PORTFOLIO</span>
-            <h2 id="partners-title" className="editorial-title">
-              Partnering With The World’s<br />Leading Beauty Houses.
+            <span className="partners-eyebrow">CURATED GLOBAL BRAND PORTFOLIO</span>
+            <h2 id="partners-title" className="partners-title">
+              Partnering With The World’s<br />
+              <span className="partners-title__accent">Leading Beauty Houses.</span>
             </h2>
+            <p className="partners-header-desc">
+              From Parisian trichology masters to Californian molecular bond science, Marvelous exclusively houses certified, master-grade formulations across all 10 world-leading beauty institutions.
+            </p>
           </div>
           <div className="partners-header__right">
-            <p className="partners-quote">
-              “To establish a salon that blends artistry, expertise, and world-class products under one roof.”
-            </p>
-            <span className="partners-quote-author">
-              — The Marvelous Founding Mission · Est. 1998
-            </span>
+            <div className="partners-quote-card">
+              <span className="partners-quote-mark">“</span>
+              <p className="partners-quote">
+                To establish a salon that blends artistry, expertise, and world-class products under one roof.
+              </p>
+              <div className="partners-quote-footer">
+                <span className="partners-quote-author">
+                  The Marvelous Founding Mission
+                </span>
+                <span className="partners-quote-year">Est. 1998 · 25+ Years</span>
+              </div>
+            </div>
           </div>
         </header>
 
-        {/* Filter Bar */}
-        <div className="partners-filter" role="tablist" aria-label="Brand category filters">
-          {CATEGORIES.map((cat) => (
-            <button
-              key={cat.id}
-              role="tab"
-              aria-selected={activeFilter === cat.id}
-              className={`partners-filter__btn ${
-                activeFilter === cat.id ? "partners-filter__btn--active" : ""
-              }`}
-              onClick={() => setActiveFilter(cat.id)}
-            >
-              {cat.label}
-            </button>
-          ))}
+        {/* Apple-Style Segmented Filter Bar */}
+        <div className="partners-filter-wrapper">
+          <div className="partners-filter" role="tablist" aria-label="Brand category filters">
+            {CATEGORIES.map((cat) => (
+              <button
+                key={cat.id}
+                role="tab"
+                aria-selected={activeFilter === cat.id}
+                className={`partners-filter__btn ${
+                  activeFilter === cat.id ? "partners-filter__btn--active" : ""
+                }`}
+                onClick={() => setActiveFilter(cat.id)}
+              >
+                <span className="partners-filter__label">{cat.label}</span>
+                <span className="partners-filter__count">{cat.count}</span>
+              </button>
+            ))}
+          </div>
         </div>
 
-        {/* Brand Grid */}
+        {/* Brand Grid with Luxury Porcelain/Obsidian Cards */}
         <div className="partners-grid">
           {filteredPartners.map((item, index) => (
             <article className="partner-card" key={item.id}>
+              <div className="partner-card__sheen" aria-hidden="true" />
               <div className="partner-card__header">
                 <span className="partner-card__index">
                   0{index + 1}
@@ -160,24 +175,35 @@ export default function BrandPartners() {
               </div>
               <div className="partner-card__body">
                 <h3 className="partner-card__name">{item.name}</h3>
-                <span className="partner-card__origin">{item.origin}</span>
+                <div className="partner-card__origin-tag">
+                  <span className="partner-card__origin-dot" />
+                  <span>{item.origin}</span>
+                </div>
                 <p className="partner-card__tagline">{item.tagline}</p>
                 <p className="partner-card__desc">{item.description}</p>
               </div>
               <div className="partner-card__footer">
-                <span className="partner-card__status">In-Salon Formulation</span>
-                <span className="partner-card__dot" aria-hidden="true">✦</span>
+                <div className="partner-card__status">
+                  <span className="partner-card__dot" aria-hidden="true">✦</span>
+                  <span>Authorized Formulation</span>
+                </div>
+                <span className="partner-card__action-icon">↗</span>
               </div>
             </article>
           ))}
         </div>
 
-        {/* Editorial Note on Global Portfolio */}
+        {/* Editorial Official Stockist Verification Strip */}
         <div className="partners-note">
-          <span className="partners-note__badge">OFFICIAL ATELIER STOCKIST</span>
+          <div className="partners-note__badge-wrap">
+            <span className="partners-note__badge">OFFICIAL ATELIER STOCKIST</span>
+          </div>
           <p className="partners-note__text">
-            Every ritual at Marvelous Salon & Academy utilizes authentic, certified formulations directly sourced from our authorized international partners.
+            Every ritual at Marvelous Salon & Academy utilizes authentic, certified formulations directly sourced from our authorized international partners. Zero compromises on fiber health and clinical purity.
           </p>
+          <div className="partners-note__seal">
+            <span>100% AUTHENTIC GUARANTEE</span>
+          </div>
         </div>
       </div>
     </section>

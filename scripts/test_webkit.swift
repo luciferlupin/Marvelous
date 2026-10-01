@@ -69,15 +69,26 @@ class WebDelegate: NSObject, WKNavigationDelegate, WKScriptMessageHandler {
             webView.evaluateJavaScript("window.scrollY") { res, err in
                 print("window.scrollY: \(String(describing: res))")
             }
-            if self.scrollTargetY > 0 {
-                let js = "window.scrollTo(0, \(self.scrollTargetY)); window.dispatchEvent(new Event('scroll'));"
-                webView.evaluateJavaScript(js) { _, _ in
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.8) {
-                        self.capture()
+            let scrollScript = """
+            (() => {
+                let target = window.location.hash;
+                if (target) {
+                    if (target.startsWith('#.')) target = target.slice(1);
+                    const el = document.querySelector(target);
+                    if (el) {
+                        const rect = el.getBoundingClientRect();
+                        window.scrollTo(0, window.scrollY + rect.top - 80);
                     }
+                } else if (\(self.scrollTargetY) > 0) {
+                    window.scrollTo(0, \(self.scrollTargetY));
                 }
-            } else {
-                self.capture()
+                window.dispatchEvent(new Event('scroll'));
+            })()
+            """
+            webView.evaluateJavaScript(scrollScript) { _, _ in
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                    self.capture()
+                }
             }
         }
     }
